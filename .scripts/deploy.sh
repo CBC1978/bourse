@@ -8,7 +8,7 @@ echo "Deployment started ..."
 (php artisan down) || true
 
 # Pull the latest version of the app
-git pull origin master
+git pull origin main
 
 # Install composer dependencies
 composer install --optimize-autoloader --no-dev --no-interaction
@@ -24,7 +24,7 @@ php artisan config:clear
 php artisan optimize
 
 # Run database migrations
-php artisan migrate --force
+#php artisan migrate --force
 
 # Turn OFF Maintenance mode
 php artisan up
