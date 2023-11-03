@@ -10,9 +10,11 @@ echo "Deployment started ..."
 # Pull the latest version of the app
 git pull
 
+# allow composer for root
+export COMPOSER_ALLOW_SUPERUSER=1; composer show;
+
 # Install composer dependencies
 composer install
-echo "yes\n"
 
 # Install npm dependencies
 npm install
