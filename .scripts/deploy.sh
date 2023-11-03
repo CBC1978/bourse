@@ -10,6 +10,9 @@ echo "Deployment started ..."
 # Pull the latest version of the app
 git pull
 
+# allow composer for root
+export COMPOSER_ALLOW_SUPERUSER=1; composer show;
+
 # Install composer dependencies
 composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
