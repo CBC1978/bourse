@@ -11,7 +11,7 @@ echo "Deployment started ..."
 git pull
 
 # Install composer dependencies
-composer update
+composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Install npm dependencies
 npm install
