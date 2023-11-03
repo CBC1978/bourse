@@ -94,16 +94,29 @@ class AdminController extends Controller
     }
 
     //ENTREPRISE GESTION..................................................................................................
-    public function displayEntreprise()
+    public function displayEntrepriseChargeur()
+{
+
+
+    $users = User::all();
+
+   // $carriers = Carrier::all(); // Récupérer tous les transporteurs
+    $shippers = Shipper::all(); // Récupérer tous les expéditeurs
+
+    return view('admin.chargeur', compact('users', 'shippers'));
+
+}
+
+public function displayEntrepriseTransporteur()
 {
 
 
     $users = User::all();
 
     $carriers = Carrier::all(); // Récupérer tous les transporteurs
-    $shippers = Shipper::all(); // Récupérer tous les expéditeurs
+   // $shippers = Shipper::all(); // Récupérer tous les expéditeurs
 
-    return view('admin.entreprise', compact('users', 'carriers', 'shippers'));
+    return view('admin.transporteur', compact('users', 'carriers'));
 
 }
 public function addCarrier(Request $request)
