@@ -18,7 +18,7 @@
   }
   .nav-main-menu{
     position: fixed;
-    width: 280px;
+    width: 275px;
     top: 105px;
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
     left: 0; z-index: 100;
@@ -63,9 +63,9 @@
             </div>
          </div>
 
-         <div class="nav"><a class="btn btn-expanded"></a>
+         <div class="nav"><a class="btn btn-expanded" id="expandButton"></a>
 
-            <nav class="nav-main-menu">
+            <nav class="nav-main-menu" id="mainMenu">
               <ul class="main-menu">
                 <li>
                   <div class="menu-box {{ request()->routeIs('home') ? 'active' : '' }}"></div>
@@ -89,11 +89,12 @@
 
                   <li> <a class="dashboard2 {{ request()->routeIs('shipper.announcements.contract') ? 'active' : '' }}" href="{{ route('shipper.announcements.contract') }}"><img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox"><span class="name">Contrat</span></a>
                   </li>
-                <li> <a class="dashboard2" href="stat.html"><img src="{{ asset('src/imgs/page/dashboard/jobs.svg') }}" alt="jobBox"><span class="name">Statistiques</span></a>
-                </li>
+               
+           {{--       <li> <a class="dashboard2" href="stat.html"><img src="{{ asset('src/imgs/page/dashboard/jobs.svg') }}" alt="jobBox"><span class="name">Statistiques</span></a>
+                </li> --}}
 
-                <li> <a class="dashboard2 {{request()->routeIs('shipper.parameter.displayShipperSettings')? 'active' : '' }}" href="{{ route('shipper.parameter.displayShipperSettings') }}"><img src="{{ asset('src/imgs/page/dashboard/settings.svg') }}" alt="jobBox"><span class="name">Paramètres</span></a>
-                </li>
+         {{--       <li> <a class="dashboard2 {{request()->routeIs('shipper.parameter.displayShipperSettings')? 'active' : '' }}" href="{{ route('shipper.parameter.displayShipperSettings') }}"><img src="{{ asset('src/imgs/page/dashboard/settings.svg') }}" alt="jobBox"><span class="name">Paramètres</span></a>
+                </li> --}}
 
 
 {{--
@@ -124,3 +125,15 @@
 
         </div>
 
+        <script>
+          const expandButton = document.getElementById('expandButton');
+          const mainMenu = document.getElementById('mainMenu');
+        
+          expandButton.addEventListener('click', function() {
+            if (mainMenu.style.width === '64px') {
+              mainMenu.style.width = '275px'; // Reprendre la largeur d'origine
+            } else {
+              mainMenu.style.width = '64px'; // Ajuster la largeur pour aligner à gauche
+            }
+          });
+        </script>
