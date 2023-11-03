@@ -41,6 +41,7 @@
     @yield('styles')
 </head>
 <body>
+{{--deploy test--}}
     @include('layouts.carrier.carrier_header')
     <main class="main">
         @include('layouts.carrier.carrier_sidebar')
