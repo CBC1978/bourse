@@ -11,7 +11,7 @@ echo "Deployment started ..."
 git pull
 
 # allow composer for root
-export COMPOSER_ALLOW_SUPERUSER=1; composer show;
+export COMPOSER_ALLOW_SUPERUSER=1
 
 # Install composer dependencies
 composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
