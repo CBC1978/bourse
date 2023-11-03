@@ -11,10 +11,11 @@ echo "Deployment started ..."
 git pull
 
 # Install composer dependencies
-composer install --optimize-autoloader --no-dev --no-interaction
+composer install
+echo "yes\n"
 
 # Install npm dependencies
-npm install --yes
+npm install
 
 # Clearing Cache
 php artisan cache:clear
