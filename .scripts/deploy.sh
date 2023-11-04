@@ -26,7 +26,7 @@ php artisan cache:clear
 php artisan config:clear
 
 # Recreate cache
-php artisan optimize
+# php artisan optimize
 
 # Run database migrations
 #php artisan migrate --force
