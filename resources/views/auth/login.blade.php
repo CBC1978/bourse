@@ -50,7 +50,7 @@
                           <div class="col-lg-6 col-md-4 col-sm-12 mx-auto">
                             <div class="form-login-cover">
                               <div class="text-center">
-                                <p class="font-sm text-brand-2">Se connecter</p>
+                                <p class="font-sm text-brand-2">Se connecter la base</p>
                                 <p class="font-sm text-muted mb-30">Connectez vous et faites de bonnes affaires.</p>
                                 <form class="login-register text-start mt-20" method="post" action="{{ route('loginUser') }}">
                                     @if(Session::has('success'))
