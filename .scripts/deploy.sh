@@ -17,7 +17,7 @@ git fetch origin main
 export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-composer install 
+composer install --no-dev --optimize-autoloader --no-interaction
 # composer update --lock
 
 # Install npm dependencies
