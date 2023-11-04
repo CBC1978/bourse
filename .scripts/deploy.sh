@@ -5,20 +5,20 @@ echo "Deployment started ..."
 
 # Turn ON Maintenance Mode or return true
 # if already is in maintenance mode
-# (php artisan down) || true
+(php artisan down) || true
 
 # Pull the latest version of the app
 # git pull
 
-git pull origin main
+git fetch origin main
 # git reset --hard origin/main
 
 # allow composer for root
 export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-# composer install
-composer update --lock
+composer install 
+# composer update --lock
 
 # Install npm dependencies
 npm install
