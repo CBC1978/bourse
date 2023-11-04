@@ -14,7 +14,7 @@ git fetch origin main
 git reset --hard origin/main
 
 # allow composer for root
-export COMPOSER_ALLOW_SUPERUSER=1
+export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
 #composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
