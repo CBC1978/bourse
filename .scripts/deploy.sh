@@ -5,16 +5,22 @@ echo "Deployment started ..."
 
 # Turn ON Maintenance Mode or return true
 # if already is in maintenance mode
-(php artisan down) || true
+# (php artisan down) || true
 
 # Pull the latest version of the app
-git pull
+# git pull
+
+git fetch origin main
+git reset --hard origin/main
+
+# Install dependencies based on lock file
+composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # allow composer for root
-export COMPOSER_ALLOW_SUPERUSER=1
+#export COMPOSER_ALLOW_SUPERUSER=1
 
 # Install composer dependencies
-composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
+#composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
 #composer self-update --1
 
 # Install npm dependencies
