@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin\parameter;
+namespace App\Http\Controllers\admin\parameter\AdminSettingsController;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
