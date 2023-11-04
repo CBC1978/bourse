@@ -10,7 +10,7 @@ echo "Deployment started ..."
 # Pull the latest version of the app
 # git pull
 
-git fetch origin main
+git pull origin main
 # git reset --hard origin/main
 
 # allow composer for root
