@@ -16,6 +16,8 @@ git reset --hard origin/main
 # allow composer for root
 export COMPOSER_ALLOW_SUPERUSER=1;
 
+composer self-update --stable
+
 # Install composer dependencies
 composer install
 
