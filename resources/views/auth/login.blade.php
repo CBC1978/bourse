@@ -71,7 +71,7 @@
                             <div class="form-login-cover">
                               <div class="text-center">
                                 <p class="font-sm text-brand-2">Bienvenue</p>
-                                <h2 class="mt-10 mb-5 text-brand-1">Authentification CICD</h2>
+                                <h2 class="mt-10 mb-5 text-brand-1">Se connecter CICD</h2>
                                 <p class="font-sm text-muted mb-30">Connectez vous et faites de bonnes affaires.</p>
                                 <form class="login-register text-start mt-20" method="post" action="{{ route('loginUser') }}">
                                     @if(Session::has('success'))
