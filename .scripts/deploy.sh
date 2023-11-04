@@ -17,8 +17,7 @@ git reset --hard origin/main
 export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-#composer install
-composer self-update --2
+composer install
 
 # Install npm dependencies
 npm install
