@@ -17,7 +17,8 @@ git pull origin main
 export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-composer install
+# composer install
+composer update --lock
 
 # Install npm dependencies
 npm install
