@@ -8,10 +8,8 @@ echo "Deployment started ..."
 (php artisan down) || true
 
 # Pull the latest version of the app
-# git pull
-
-git pull origin main
-# git reset --hard origin/main
+cd /var/www/html/bourse
+git pull
 
 # allow composer for root
 export COMPOSER_ALLOW_SUPERUSER=1;
