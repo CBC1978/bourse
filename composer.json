@@ -27,12 +27,7 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "magento/*": true,
-            "laminas/*": true,
-            "cweagans/composer-patches": true
-        }
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
