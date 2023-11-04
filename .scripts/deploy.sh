@@ -21,6 +21,7 @@ composer install --no-dev --optimize-autoloader --no-interaction
 # Install npm dependencies
 npm install
 
+php artisan up
 # Clearing Cache
 php artisan cache:clear
 php artisan config:clear
