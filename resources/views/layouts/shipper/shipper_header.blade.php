@@ -48,7 +48,11 @@
     <div class="container">
       <div class="main-header">
         <div class="header-left">
-          <div class="header-logo"><a class="d-flex" {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}"><img alt="jobBox" src="{{ asset('imgs/page/dashboard/bvf02.png') }}"></a></div>
+          <div class="header-logo">
+              <a class="d-flex" {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
+              <img alt="jobBox" src="{{ asset('src/imgs/page/dashboard/bvf02.png') }}">
+              </a>
+          </div>
           <strong class="btn btn-grey-small ml-10">
                       @if(Session::has('company_name'))
                           <p> Entreprise : {{ Session::get('company_name') }}</p>
@@ -64,7 +68,12 @@
         </div> --}}
 
         <div class="header-right">
-          <div class="block-signin"><a class="btn btn-default icon-edit hover-up{{ request()->routeIs('shipper.announcements.create') ? 'active' : '' }}"  href="{{ route('shipper.announcements.create') }}">PUBLIER UNE ANNONCE DE FRET</a>
+          <div class="block-signin">
+              @if(Session::get('fk_shipper_id') != 0)
+                  <a class="btn btn-default icon-edit hover-up{{ request()->routeIs('shipper.announcements.create') ? 'active' : '' }}"  href="{{ route('shipper.announcements.create') }}">
+                      PUBLIER UNE OFFRE DE FRET
+                  </a>
+              @endif
             <div class="dropdown d-inline-block"><a class="btn btn-notify" id="dropdownNotify" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static"></a>
               <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownNotify">
                 <li><a class="dropdown-item active" href="#">10 notifications</a></li>
