@@ -1,12 +1,7 @@
-
-
 @extends('layouts.carrier')
 
 @section('content')
 <div class="box-heading">
-    <div class="box-title">
-      <!--h3 class="mb-35">TRANSPORTEUR :Tableau de Bord</h3-->
-    </div>
     <div class="box-breadcrumb">
       <div class="breadcrumbs mb-2">
         <ul>
@@ -28,6 +23,7 @@
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
               <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
+              <div class="card-image"> <img src="{{asset('src/imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
                   <h3>{{ $countAnnouncements }}</span><span class="font-sm status up">0.15<span>%</span></span>
@@ -40,6 +36,8 @@
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
               <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
+
+              <div class="card-image"> <img src="{{asset('src/imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
                   <h3>{{ $count}}<span class="font-sm status up">00<span>%</span></span>
@@ -52,6 +50,7 @@
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
               <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
+              <div class="card-image"> <img src="{{asset('imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
                   <h3>{{$countContractTransport}}<span class="font-sm status up">00<span>%</span></span>
@@ -64,6 +63,7 @@
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
               <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
+              <div class="card-image"> <img src="{{asset('src/imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
                   <h3>00<span class="font-sm status up">00<span>%</span></span>
@@ -72,11 +72,7 @@
                 <p class="color-text-paragraph-2">Contrat ce mois</p>
               </div>
             </div>
-<!----------------------------------------------------------------------------
-|FIN  SECTION VU RAPIDE
-|--------------------------------------------------------------------------------
-   -->
-    </div>
+        </div>
     </div>
   </div>
     <div class="row">
@@ -102,6 +98,9 @@
               <div id="search-results"> </div>
 
               <div class="row" id="annoncesContainer">
+                  @if(count($announcements) == 0)
+                      <p>Auncune offre disponible</p>
+                  @endif
                   @foreach($announcements as $announce)
                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" id="card_annonce">
                           <div class="card-grid-2 hover-up">
@@ -128,7 +127,6 @@
                               </div>
                           </div>
                       </div>
-                    @endforeach
 
                       <div class="modal fade" id="ModalApplyJobForm{{$announce->id}}" tabindex="-1" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
@@ -143,30 +141,33 @@
                                       <form class="login-register text-start mt-20 pb-30" action="{{ route('carrier.announcements.postuler') }}"  method="post" id="formPostuler">
                                           @csrf
                                           <div class="form-group">
-                                              <label class="form-label" for="price">Prix<span class="required">*</span><span>(En FCFA)</span></label></label>
+                                              <label class="form-label" for="price">Prix<span class="text-danger">*</span><span>(En FCFA)</span></label>
                                               <input class="form-control" type="number" name="price" id="price" placeholder="votre meilleur offre">
                                           </div>
 
                                           <div class="form-group">
-                                              <label class="form-label" for="description">Description<span class="required">*</span></label>
+                                              <label class="form-label" for="description">Description<span class="text-danger">*</span></label>
                                               <input class="form-control" id="description" type="text" required="" name="description" placeholder="description...">
                                               <input class="form-control" id="idUser" name="idUser" value="{{session('userId') }}" type="hidden">
                                               <input class="form-control" id="announce" name="announce" value="{{ $announce->id }}" type="hidden">
                                           </div>
-                                          <div class="login_footer form-group d-flex justify-content-between">
-                                              <label class="cb-container">
-                                                  <input type="checkbox"><span class="text-small">Conditions generales d'utilisation</span><span class="checkmark"></span>
-                                              </label><a class="text-muted" href="page-contact.html">En savoir plus</a>
-                                          </div>
+{{--                                          <div class="login_footer form-group d-flex justify-content-between">--}}
+{{--                                              <label class="cb-container">--}}
+{{--                                                  <input type="checkbox"><span class="text-small">Conditions generales d'utilisation</span><span class="checkmark"></span>--}}
+{{--                                              </label><a class="text-muted" href="page-contact.html">En savoir plus</a>--}}
+{{--                                          </div>--}}
                                           <div class="form-group">
                                               <button class="btn btn-default hover-up w-100" type="submit" name="login">ENVOYER</button>
                                           </div>
-                                          <div class="text-muted text-center">Avez vous besoin d'aides? <a href="page-contact.html">Contactez nous </a></div>
+                                          <div class="text-muted text-center">Avez vous besoin d'aides? <a href="#">Contactez nous </a></div>
                                       </form>
                                   </div>
                               </div>
                           </div>
                       </div>
+                    @endforeach
+
+
                       <style>
                       .required {
                         color: red;

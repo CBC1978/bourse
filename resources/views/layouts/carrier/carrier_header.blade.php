@@ -28,11 +28,11 @@
                 <input class="form-control" id="des" type="text" required="" name="description" placeholder="description...">
                 <input class="form-control" id="file" name="idUser" value="{{session('userId') }}" type="hidden">
           </div>
-          <div class="login_footer form-group d-flex justify-content-between">
-            <label class="cb-container">
-              <input type="checkbox"><span class="text-small">Conditions generales d'utilisation</span><span class="checkmark"></span>
-            </label><a class="text-muted" href="#">En savoir plus</a>
-          </div>
+{{--          <div class="login_footer form-group d-flex justify-content-between">--}}
+{{--            <label class="cb-container">--}}
+{{--              <input type="checkbox"><span class="text-small">Conditions generales d'utilisation</span><span class="checkmark"></span>--}}
+{{--            </label><a class="text-muted" href="#">En savoir plus</a>--}}
+{{--          </div>--}}
           <div class="form-group">
             <button class="btn btn-default hover-up w-100" type="submit" name="login">ENVOYER</button>
           </div>
@@ -46,14 +46,16 @@
   <div class="container">
     <div class="main-header">
       <div class="header-left">
-        <div class="header-logo"><a class="d-flex" {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}"><img alt="jobBox" src="{{ asset('src/imgs/page/dashboard/bvf02.png') }}"></a></div>
-
+        <div class="header-logo">
+            <a class="d-flex" {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
+            <img alt="jobBox" src="{{ asset('src/imgs/page/dashboard/bvf02.png') }}">
+            </a>
+        </div>
          <span class="btn btn-grey-small ml-10">
                @if(Session::has('company_name'))
               <p>{{ Session::get('company_name') }}</p>
                @endif
          </span>
-
       </div>
       {{-- <div class="header-search">
         <div class="box-search">
@@ -64,7 +66,12 @@
       </div> --}}
 
       <div class="header-right">
-        <div class="block-signin"><a class="btn btn-default icon-edit hover-up{{ request()->routeIs('carrier.announcements.create') ? 'active' : '' }}"  href="{{ route('carrier.announcements.create') }}">PUBLIER UNE ANNONCE DE TRANSPORT</a>
+        <div class="block-signin">
+            @if(Session::get('fk_carrier_id') != 0)
+                <a class="btn btn-default icon-edit hover-up{{ request()->routeIs('carrier.announcements.create') ? 'active' : '' }}"  href="{{ route('carrier.announcements.create') }}">
+                    PUBLIER UNE ANNONCE DE TRANSPORT
+                </a>
+            @endif
           <div class="dropdown d-inline-block"><a class="btn btn-notify" id="dropdownNotify" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static"></a>
             <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownNotify">
               <li><a class="dropdown-item active" href="#">10 notifications</a></li>

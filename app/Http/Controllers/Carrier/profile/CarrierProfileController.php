@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\carrier\profile;
+namespace App\Http\Controllers\Carrier\profile;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

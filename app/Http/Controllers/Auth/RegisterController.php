@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Mail\Email\RegisterEmail;
+use App\Mail\Email\RegisterEmails;
 use App\Providers\Helper;
 use Illuminate\Http\Request;
 
@@ -42,12 +43,12 @@ class RegisterController extends Controller
         $user->password =Hash::make( $request->password);
         $user->role = $request->role;
         $user->status = 0;
-        $res = $user->save();
+        try {
 
-        if ($res){
-            Mail::to( $user->email)->send(new RegisterEmail($user->first_name,'Valider votre inscription',  $user->code));
+            Mail::to( $user->email)->send(new RegisterEmails($user->first_name,'Valider votre inscription',  $user->code));
+            $user->save();
             return view('auth.otp');
-        }else{
+        }catch (\Exception $e){
             return view('auth.register');
         }
     }

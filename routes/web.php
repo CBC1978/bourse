@@ -181,7 +181,10 @@
 
     Route::prefix('admin')->group(function () {
 
+        Route::get('/transporteur', [AdminController::class, 'displayEntrepriseTransporteur'])->name('admin.transporteur');
+        Route::get('/chargeur', [AdminController::class, 'displayEntrepriseChargeur'])->name('admin.chargeur');
         Route::get('/entreprise', [AdminController::class, 'displayEntreprise'])->name('admin.entreprise');
+
         Route::post('/ajouter-transporteur', [AdminController::class, 'addCarrier'])->name('admin.ajouter-transporteur');
         Route::post('/ajouter-expediteur', [AdminController::class, 'addShipper'])->name('admin.ajouter-expediteur');
 

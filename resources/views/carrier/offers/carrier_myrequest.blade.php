@@ -31,7 +31,7 @@
         <div class="box-breadcrumb">
             <div class="breadcrumbs">
                 <ul>
-                    <li><a class="icon-home" href="index.html">Dashboard</a></li>
+                    <li><a class="icon-home" href="#">Dashboard</a></li>
                     <li><span>Mes demandes</span></li>
                 </ul>
             </div>
