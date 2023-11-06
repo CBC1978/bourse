@@ -76,7 +76,7 @@
                   <div class="menu-box">
                     <a>
                         <img src="{{ asset('src/imgs/page/dashboard/candidates.svg') }}" alt="jobBox">
-                        <span class="name">Entreprise</span>
+                        <span class="name">entreprise</span>
                     </a>
                   </div>
                   <ul class="sub-menu">

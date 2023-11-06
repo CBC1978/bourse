@@ -138,25 +138,20 @@
     Route::prefix('shipper/announcements')->name('shipper.announcements.')->group(function () {
         Route::get('/', [ShipperAnnouncementController::class, 'displayFreightAnnouncement'])->name('index');
         Route::get('user', [ShipperAnnouncementController::class, 'userConnectedAnnouncement'])->name('user');
+        Route::get('myrequest', [ShipperAnnouncementController::class, 'myrequest'])->name('shipper_myrequest');
+        Route::get('contract', [ShipperAnnouncementController::class, 'contractHome'])->name('contract');
         Route::get('create', [ShipperAnnouncementController::class, 'displayAnnouncementForm'])->name('create');
         Route::get('{id}', [ShipperAnnouncementController::class, 'show'])->name('show');
         Route::post('postuler', [ShipperAnnouncementController::class, 'positOffer'])->name('postuler');
         Route::post('manage-offer/{id}', [ShipperAnnouncementController::class, 'manageOffer'])->name('offer.manage')->where('id', '[0-9]+');
-        Route::get('contract', [ShipperAnnouncementController::class, 'contractHome'])->name('contract');
 
-
-
-//    Route::get('myoffer/{id}', [ShipperAnnouncementController::class, 'offer'])->name('myoffer')->where('id', '[0-9]+');
+        //    Route::get('myoffer/{id}', [ShipperAnnouncementController::class, 'offer'])->name('myoffer')->where('id', '[0-9]+');
         Route::post('store', [ShipperAnnouncementController::class, 'handleSubmittedAnnouncement'])->name('store');
-
-
-        // Route::get('myrequest', [ShipperAnnouncementController::class, 'myrequest'])->name('shipper_myrequest');
-
+//        Route::get('test', [ShipperAnnouncementController::class, 'test_shipper'])->name('test_shipper');
         Route::get('myoffer/{id}', [ShipperAnnouncementController::class, 'offer'])->name('myoffer')->where('id', '[0-9]+');
         Route::post('store', [ShipperAnnouncementController::class, 'handleSubmittedAnnouncement'])->name('store');
 
     });
-    Route::get('shipper/myrequest', [ShipperAnnouncementController::class, 'myrequest'])->name('shipper.announcements.shipperMyrequest');
 
 //Les routes annonces ADMIN
     Route::prefix('annonces')->group(function () {

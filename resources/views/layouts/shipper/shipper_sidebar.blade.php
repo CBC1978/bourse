@@ -73,7 +73,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dashboard2 {{ request()->routeIs('shipper.announcements.shipperMyrequest') ? 'active' : '' }}" href="{{ route('shipper.announcements.shipperMyrequest') }}">
+                                    <a class="dashboard2 {{ request()->routeIs('shipper.announcements.shipper_myrequest') ? 'active' : '' }}" href="{{ route('shipper.announcements.shipper_myrequest') }}">
                                         <img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox">
                                         <span class="name">Mes offres de transports</span>
                                     </a>
@@ -121,8 +121,8 @@
                   </li>
 
                   <li>
-                    <div class="menu-box {{ request()->routeIs('shipper.announcements.shipperMyrequest') ? 'active' : '' }}"></div>
-                    <a class="" href="{{ route('shipper.announcements.shipperMyrequest') }}">
+                    <div class="menu-box {{ request()->routeIs('shipper.announcements.shipper_myrequest') ? 'active' : '' }}"></div>
+                    <a class="" href="{{ route('shipper.announcements.shipper_myrequest') }}">
                         <img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox">
                         <span class="name">Mes offres de transports</span>
                     </a>

@@ -175,14 +175,16 @@ class ShipperAnnouncementController extends Controller
     $shipperId = session('fk_shipper_id');
 
     // Récupérez toutes les offres de chargeur liées à ce chargeur
-   $offers =FreightOffer::where('fk_shipper_id', $shipperId)->get();
-   return view('shipper.offers.shipper_myrequest', ['offers' => $offers]);
+   $offers =DB::table('freight_offer')
+       ->where('fk_shipper_id', $shipperId)->get();
+
+   return view('shipper.offers.shipper_myrequest', ['offers'=>$offers]);
    }
 
    public function manageOffer(Request $request, $id)
    {
        $action = $request->input('action');
-       
+
        // Récupérer l'offre en fonction de l'ID
        $transportOffer = TransportOffer::findOrFail($id);
       // $emailUtilisateur = $transportOffer->user->email;

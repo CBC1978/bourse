@@ -69,26 +69,22 @@
                                 </td>
                                 <td>
                                     {{-- Vérifiez la valeur de status_message pour décider d'afficher la notification --}}
-                                    @if($offer->status_message == 0)
+                                    @if($offer->status == 0)
                                         Aucune notification
-                                    @elseif($offer->status_message == 1)
+                                    @elseif($offer->status == 1)
                                         Vous avez un message
-                                    @elseif($offer->status_message == 3)
+                                    @elseif($offer->status == 3)
                                         Message lu
                                     @endif
                                 </td>
                                 <td>
                                     {{-- Vérifiez si status_message est égal à 2 avant d'afficher le bouton Echanger --}}
-                                    @if($offer->status_message == 1 || $offer->status_message == 3)
+                                    @if($offer->status == 1 || $offer->status == 3)
                                         <a href="{{ route('carrier-reply-chat', ['offer_id' => $offer->id]) }}" class="btn btn-tag btn-info">Echanger</a>
                                     @endif
                                 </td>
                             </tr>
                         @endforeach
-
-                        <!-- Affichage de la pagination -->
-
-                        {{ $offers->links('pagination::bootstrap-4') }}
 
                         </tbody>
                     </table>

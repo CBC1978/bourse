@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="row table-responsive" id="annoncesContainer">
-                      @foreach($transports as $transport)
+
                           <table class="table" id="requestTable">
                               <thead>
                                   <tr>
@@ -100,6 +100,7 @@
                                   </tr>
                               </thead>
                               <tbody>
+                              @foreach($transports as $transport)
                                   <tr>
                                       <td>
                                           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12"  id="card_annonce">
@@ -131,7 +132,7 @@
                                       </td>
                                   </tr>
                               </tbody>
-                          </table>
+
 
                         <div class="modal fade" id="ModalApplyJobForm{{$transport->id}}" tabindex="-1" aria-hidden="true">
                               <div class="modal-dialog modal-lg">
@@ -170,6 +171,7 @@
                               </div>
                           </div>
                       @endforeach
+                  </table>
               </div>
             </div>
           </div>

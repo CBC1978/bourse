@@ -97,10 +97,10 @@ class AdminController extends Controller
 {
 
 
-    $shippers = Shipper::all(); // Récupérer tous les expéditeurs
+    $users = User::all();
 
-    // Filtrer les utilisateurs transporteurs
-    $users = User::whereNotNull('fk_shipper_id')->get();
+   // $carriers = Carrier::all(); // Récupérer tous les transporteurs
+    $shippers = Shipper::all(); // Récupérer tous les expéditeurs
 
     return view('admin.chargeur', compact('users', 'shippers'));
 
@@ -108,12 +108,15 @@ class AdminController extends Controller
 
 public function displayEntrepriseTransporteur()
 {
-    $carriers = Carrier::all(); // Récupérer tous les transporteurs
 
-    // Filtrer les utilisateurs transporteurs
-    $users = User::whereNotNull('fk_carrier_id')->get();
+
+    $users = User::all();
+
+    $carriers = Carrier::all(); // Récupérer tous les transporteurs
+   // $shippers = Shipper::all(); // Récupérer tous les expéditeurs
 
     return view('admin.transporteur', compact('users', 'carriers'));
+
 }
 public function addCarrier(Request $request)
 {
