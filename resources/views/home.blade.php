@@ -80,6 +80,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </main>
 </body>
 <script src="{{ asset('src/js/vendor/modernizr-3.6.0.min.js') }}"></script>

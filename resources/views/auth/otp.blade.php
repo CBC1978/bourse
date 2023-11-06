@@ -11,8 +11,8 @@
 <meta name="description" content="Index page">
 <meta name="keywords" content="index, page">
 <meta name="author" content="">
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('dashboard/imgs/template/favicon.svg') }}">
-<link href="{{ asset('css/style.css?version=4.1') }}" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('src/dashboard/imgs/template/favicon.svg') }}">
+<link href="{{ asset('src/css/style.css?version=4.1') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -27,35 +27,13 @@
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
           <div class="preloader-inner position-relative">
-            <div class="text-center"><img src="assets/imgs/template/loading.gif" alt="jobBox"></div>
+            <div class="text-center"><img src="{{asset('src/assets/imgs/template/loading.gif')}}" alt="jobBox"></div>
           </div>
         </div>
       </div>
 
-      <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
-      <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
-        <div class="mobile-header-wrapper-inner">
-          <div class="mobile-header-content-area">
-            <div class="perfect-scroll">
-              <div class="mobile-search mobile-header-border mb-30">
-                <form action="#">
-                  <input type="text" placeholder="Search…"><i class="fi-rr-search"></i>
-                </form>
-              </div>
-              <div class="mobile-menu-wrap mobile-header-border">
-                <!-- mobile menu start-->
-
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
       <main class="main">
-
         <div class="box-content">
-
           <div class="row">
             <div class="col-lg-12">
               <div class="section-box">
@@ -67,75 +45,69 @@
                           <div class="col-lg-6 col-md-4 col-sm-12 mx-auto">
                             <div class="form-login-cover">
                               <div class="text-center">
-                                <p class="font-sm text-brand-2"> </p>
                                 <h2 class="mt-10 mb-5 text-brand-1">Confirmation</h2>
                                 <p class="font-sm text-muted mb-30">Un code a été envoyé dans votre email</p>
+                                    <form class="login-register text-start mt-20" method="post" action="{{ route('otpVerify') }}">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label class="form-label" for="otp">CODE</label>
+                                            <input class="form-control @error('otp') is-invalid @enderror" id="otp" type="text" required="" name="otp" placeholder="Entrez le code de confirmation">
+                                            @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-brand-1 hover-up w-100" type="submit" name="submit"> Valider</button>
+                                        </div>
 
-                        <form class="login-register text-start mt-20" method="post" action="{{ route('otpVerify') }}">
-                            @csrf
+                                    </form>
+                                    @if(session('error_message'))
+                                        <div class="alert alert-danger mt-3">
+                                            {{ session('error_message') }}
+                                        </div>
+                                        <script>
+                                          // JavaScript pour faire disparaître le message d'erreur après un délai
+                                          window.addEventListener('DOMContentLoaded', function () {
+                                              var errorMessage = document.getElementById('error-message');
 
-                            <div class="form-group">
-                                <label class="form-label" for="otp">CODE</label>
-                                <input class="form-control @error('otp') is-invalid @enderror" id="otp" type="text" required="" name="otp" placeholder="7T6F9R">
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                              // Vérifiez si le message d'erreur est présent
+                                              if (errorMessage) {
+                                                  setTimeout(function() {
+                                                      errorMessage.style.display = 'none';
+                                                  }, 6000); // Disparaître après 6 secondes (6000 millisecondes)
+                                              }
+                                          });
+                                        </script>
+                                    @endif
+                                </div>
+                              </div>
                             </div>
-
-                            <div class="form-group">
-                                <button class="btn btn-brand-1 hover-up w-100" type="submit" name="submit"> Valider</button>
-                            </div>
-
-                        </form>
-                        @if(session('error_message'))
-                            <div class="alert alert-danger mt-3">
-                                {{ session('error_message') }}
-                            </div>
-                            <script>
-                              // JavaScript pour faire disparaître le message d'erreur après un délai
-                              window.addEventListener('DOMContentLoaded', function () {
-                                  var errorMessage = document.getElementById('error-message');
-
-                                  // Vérifiez si le message d'erreur est présent
-                                  if (errorMessage) {
-                                      setTimeout(function() {
-                                          errorMessage.style.display = 'none';
-                                      }, 6000); // Disparaître après 6 secondes (6000 millisecondes)
-                                  }
-                              });
-                            </script>
-
-                        @endif
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="img-2"><img src="imgs/page/login-register/img-3.svg" alt="JobBox"></div>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-</main>
+    </main>
 </body>
-<script src="{{ asset('js/vendor/modernizr-3.6.0.min.js') }}"></script>
-<script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
-<script src="{{asset('js/vendor/jquery-migrate-3.3.0.min.js')}}"></script>
-<script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('js/plugins/waypoints.js')}}"></script>
-<script src="{{asset('js/plugins/magnific-popup.js')}}"></script>
-<script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
-<script src="{{asset('js/plugins/select2.min.js')}}"></script>
-<script src="{{asset('js/plugins/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('js/plugins/jquery.circliful.js')}}"></script>
-<script src="{{asset('js/plugins/charts/index.js')}}"></script>
-<script src="{{asset('js/plugins/charts/xy.js')}}"></script>
-<script src="{{asset('js/plugins/charts/Animated.js')}}"></script>
-<script src="{{asset('js/plugins/armcharts5-script.js')}}"></script>
-<script src="{{asset('js/main.js?v=4.1')}}"></script>
+<script src="{{ asset('src/js/vendor/modernizr-3.6.0.min.js') }}"></script>
+<script src="{{ asset('src/js/vendor/jquery-3.6.0.min.js') }}"></script>
+<script src="{{asset('src/js/vendor/jquery-migrate-3.3.0.min.js')}}"></script>
+<script src="{{asset('src/js/vendor/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('src/js/plugins/waypoints.js')}}"></script>
+<script src="{{asset('src/js/plugins/magnific-popup.js')}}"></script>
+<script src="{{asset('src/js/plugins/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('src/js/plugins/select2.min.js')}}"></script>
+<script src="{{asset('src/js/plugins/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('src/js/plugins/jquery.circliful.js')}}"></script>
+<script src="{{asset('src/js/plugins/charts/index.js')}}"></script>
+<script src="{{asset('src/js/plugins/charts/xy.js')}}"></script>
+<script src="{{asset('src/js/plugins/charts/Animated.js')}}"></script>
+<script src="{{asset('src/js/plugins/armcharts5-script.js')}}"></script>
+<script src="{{asset('src/js/main.js?v=4.1')}}"></script>
 </html>

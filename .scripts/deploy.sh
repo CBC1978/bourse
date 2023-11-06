@@ -8,20 +8,26 @@ echo "Deployment started ..."
 (php artisan down) || true
 
 # Pull the latest version of the app
-git pull origin main
+cd /var/www/html/bourse
+git pull
+
+# allow composer for root
+export COMPOSER_ALLOW_SUPERUSER=1;
 
 # Install composer dependencies
-composer install --optimize-autoloader --no-dev --no-interaction
+composer install --no-dev --optimize-autoloader --no-interaction
+# composer update --lock
 
 # Install npm dependencies
-npm install --yes
+npm install
 
+php artisan up
 # Clearing Cache
 php artisan cache:clear
 php artisan config:clear
 
 # Recreate cache
-php artisan optimize
+# php artisan optimize
 
 # Run database migrations
 #php artisan migrate --force

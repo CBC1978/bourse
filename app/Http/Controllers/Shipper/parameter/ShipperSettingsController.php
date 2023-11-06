@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\shipper\parameter;
+namespace App\Http\Controllers\Shipper\parameter;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;

@@ -5,8 +5,6 @@ name: Deploy
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
 
 # Authenticate to the the server via ssh
 # and run our deployment script
@@ -16,10 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to Server
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
+          passphrase: ""
           script: "cd /var/www/html/bourse && ./.scripts/deploy.sh"
