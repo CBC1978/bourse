@@ -11,7 +11,7 @@
       <div class="breadcrumbs mb-2">
         <ul>
           <li> <a class="icon-home" href="#">Tableau de bord</a></li>
-          <li><span>Dashboard</span></li>
+          <li><span>Accueil</span></li>
         </ul>
       </div>
     </div>
@@ -112,7 +112,7 @@
                                   </div>
                               </div>
                               <div class="card-block-info">
-                                  <h6><a href="offer-details.html">{{ucfirst($announce->origin)}}-{{ucfirst($announce->destination)}}</a></h6>
+                                  <p><a href="offer-details.html">{{ucfirst($announce->origin)}}-{{ucfirst($announce->destination)}}</a></p>
                                   <div class="mt-5"><span class="card-briefcase">Date d'expiration:</span><span class="card-time">{{ date("d/m/Y",strtotime($announce->limit_date)) }}</span></div>
                                   <p class="font-sm color-text-paragraph mt-15">{{$announce->description}}</p>
                                   <div class="mt-30"><a class="btn btn-grey-small mr-5" href="" >{{$announce->weight}} Tonne(s)</a><a class="btn btn-grey-small mr-5" href="">{{ $announce->volume }} m3</a></div>

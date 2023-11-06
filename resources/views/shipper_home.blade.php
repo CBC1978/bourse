@@ -14,7 +14,7 @@
       <div class="breadcrumbs mb-2">
         <ul>
           <li> <a class="icon-home" href="#">Tableau de bord</a></li>
-          <li><span>Dashboard</span></li>
+          <li><span>Accueil</span></li>
 
         </ul>
       </div>
@@ -99,12 +99,12 @@
                 <div class="row">
                   <div class="box-title">
                     <div class="row">
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
-                        <h3>Annonces récentes de transport </h3>
-                      </div>
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12" style="margin-bottom: 20px;" >
-                        <input type="text" id="recherche" placeholder="Recherchez une annonce">
-                      </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
+                              <h3>Annonces de $transport récents</h3>
+                          </div>
+                          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12" style="margin-bottom: 20px;">
+                          <input type="text" id="recherche" placeholder="Recherchez une annonce">
+                          </div>
                     </div>
                   </div>
                 </div>
@@ -117,13 +117,13 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12"  id="card_annonce">
                       <div class="card-grid-2 hover-up">
                         <div class="card-grid-2-image-left"><span class="flash"></span>
-                          <div class="image-box"><img src="imgs/brands/brand-1.png" alt="jobBox"></div>
+                          <div class="image-box"><img src="" alt=""></div>
                           <div class="right-info"><a class="name-job{{ request()->routeIs('s_offerdetail') ? 'active' : '' }}"  href="{{ route('s_offerdetail') }}">{{ $transport->company_name }}</a>
                             {{-- <span class="location-small">New York, US</span> --}}
                           </div>
                         </div>
                         <div class="card-block-info">
-                          <h6><a href="#">{{ ucfirst($transport->origin).'--'. ucfirst($transport->destination) }}</a></h6>
+                          <p><a href="#">{{ ucfirst($transport->origin).'--'. ucfirst($transport->destination) }}</a></p>
                           <div class="mt-5"><span class="card-briefcase">Date d'expiration :</span><span class="card-time">{{ date("d/m/Y",strtotime($transport->limit_date)) }}</span></div>
                           <p class="font-sm color-text-paragraph mt-15">{{ $transport->description }}</p>
                           <div class="mt-30"><a class="btn btn-grey-small mr-5" href="">{{ $transport->weight }} T</a></div>
