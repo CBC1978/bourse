@@ -115,72 +115,11 @@
 </div>
 
 
-<div class="box-content">
-    <div class="row mt-10">
-        <div class="col-md-6">
-            <h2>Assigner des entreprises aux utilisateurs</h2>
-            <form id="assign-user-form" action="{{ route('admin.assigner-entreprise-user') }}" method="post">
-                @csrf
-                <div class="mb-3">
-                    <label for="carrier_id">Assigner une entreprise transporteur :</label>
-                    <select class="form-control" id="carrier_id" name="carrier_id">
-                        <option value="">Sélectionner une entreprise transporteur</option>
-                        @foreach ($carriers as $carrier)
-                            <option value="{{ $carrier->id }}">{{ $carrier->company_name }}</option>
-                        @endforeach
-                    </select>
-
-    <div class="box-content">
-        <div id="forms-container">
-            <div class="row">
-                @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-
-                    <h5>  {{ session('success') }}</h5>
-                        <span aria-hidden="true">&times;</span>
-
-
-                </div>
-                @endif
-                <div class="col-md-12">
-                    <h2>Ajouter une entreprise de transporteur</h2>
-                    <form action="{{ route('admin.ajouter-transporteur') }}" method="post">
-                        @csrf
-                        <label for="company_name">Nom de l'entreprise<span class="required">*</span></label>
-                        <input type="text" name="company_name" required>
-
-                        <label for="address">Adresse<span class="required">*</span></label>
-                        <input type="text" name="address" required>
-
-                        <label for="phone">Téléphone<span class="required">*</span></label>
-                        <input type="text" name="phone" required>
-
-                        <label for="city">Ville<span class="required">*</span></label>
-                        <input type="text" name="city" required>
-
-                        <label for="email">Email<span class="required">*</span></label>
-                        <input type="email" name="email" required>
-
-                        <label for="ifu">Numéro IFU<span class="required">*</span></label>
-                        <input type="text" name="ifu" required>
-
-                        <label for="rccm">RCCM<span class="required">*</span></label>
-                        <input type="text" name="rccm" required>
-
-                        <!-- Champ caché pour stocker l'ID de l'utilisateur -->
-                        <input type="hidden" name="user_id" value="{{ Session::get('userId') }}">
-
-                        <button type="submit mt-1" class="btn btn-primary mt-2">Ajouter Transporteur</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <form id="assign-user-form" action="{{ route('admin.assigner-entreprise-user') }}" method="post">
         @csrf
         <div class="box-content">
             <div class="row mt-10">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <h2>Assigner des entreprises aux utilisateurs</h2>
                         <div class="mb-3">
                             <label for="carrier_id">Assigner une entreprise transporteur :</label>
@@ -191,7 +130,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <button type="submit mt-1" class="btn btn-primary mt-2">Assigner Entreprises aux Utilisateurs Sélectionnés</button>
+                        <button type="submit mt-1" class="btn btn-primary">Assigner une Entreprises aux Utilisateurs Sélectionnés</button>
                 </div>
             </div>
         </div>
