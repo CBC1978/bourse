@@ -105,7 +105,7 @@
                                   </label><a class="text-muted" href="#">Mot de passe oublié</a>
                                 </div>
                                 <div class="form-group">
-                                  <button class="btn btn-brand-1 hover-up w-100" type="submit" name="login">Login</button>
+                                  <button class="btn btn-brand-1 hover-up w-100" type="submit" name="login">Connectez-Vous</button>
                                 </div>
                                 <div class="text-muted text-center">Vous n'avez pas de compte ? <a  href="{{ route('register') }}">S'inscrire</a></div>
                               </form>

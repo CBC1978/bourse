@@ -25,7 +25,7 @@
   }
 </style>
 
-<div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
+    <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
         <!-- Mobile menu (hidden by default) -->
         <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
             <div class="mobile-header-wrapper-inner">
@@ -63,7 +63,7 @@
             </div>
          </div>
 
-      <div class="nav"><a class="btn btn-expanded"></a>
+        <div class="nav"><a class="btn btn-expanded"></a>
 
           <nav class="nav-main-menu">
                 <ul class="main-menu">
@@ -105,5 +105,5 @@
           </nav>
         </div>
 
-      </div>
+    
 

@@ -23,6 +23,7 @@
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
     left: 0;
     z-index: 100;
+    
   }
 </style>
 
@@ -82,24 +83,39 @@
                   </div>
                 </li>
 
-                <li>
+                <!--li>
                   <div class="menu-box {{ request()->routeIs('annonces.a_annonce') ? 'active' : '' }}"></div>
                    <a href="{{ route('annonces.a_annonce') }}"><img src="{{ asset('src/imgs/page/dashboard/tasks.svg') }}" alt="jobBox"><span class="name">Annonces </span></a>
+                </li-->
+
+                <li>
+                    <div class="menu-box  'active' : '' }}">
+                        <a href=""><img src="{{ asset('src/imgs/page/dashboard/tasks.svg') }}" alt="jobBox"><span class="name">Annonces </span></a>
+                    </div>
+                    <ul> 
+                        <li>
+                            <div class="sub-menu" style=" background: rgba(255, 255, 255, 0.7);" >
+                                <a href="{{ route('annonces.a_annonce') }}">shipper</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sub-menu" >
+                                <a href="{{ route('annonces.annonceListe') }}">Carriers</a>
+                            </div>
+                        </li>
+                    </ul>
+
                 </li>
 
-             {{--   <li>
-                        <a class="dashboard2 {{ request()->routeIs('admin.parameter.displayAdminSettings') ? 'active' : '' }}" href="{{ route('admin.parameter.displayAdminSettings') }}"><img src="{{ asset('src/imgs/page/dashboard/tasks.svg') }}" alt="jobBox"><span class="name">Paramètres </span></a>
-                    </li>--}}
+
+                <!--li>
+                  <a class="dashboard2 {{ request()->routeIs('admin.parameter.displayAdminSettings') ? 'active' : '' }}" href="{{ route('admin.parameter.displayAdminSettings') }}"><img src="{{ asset('src/imgs/page/dashboard/tasks.svg') }}" alt="jobBox"><span class="name">Paramètres </span></a>
+                </li-->
 
               </ul>
             </nav>
-              <div class="border-bottom mb-20 mt-20"></div>
           </div>
-        </div>
+          
+    
 
-        <div class="burger-icon burger-icon-white">
-    <span class="burger-icon-top"></span>
-    <span class="burger-icon-mid"></span>
-    <span class="burger-icon-bottom"></span>
-</div>
-
+       

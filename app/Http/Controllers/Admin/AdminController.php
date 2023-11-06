@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\FreightOffer;
 use Illuminate\Http\Request;
 use App\Models\FreightAnnouncement;
 use App\Models\TransportAnnouncement;
@@ -18,14 +19,20 @@ class AdminController extends Controller
     // Méthode pour afficher toutes les annonces de fret
     public function displayAnnouncement()
     {
-        $chargeurAnnonces = FreightAnnouncement::with(['shipper'])->get();
-        $transporteurAnnonces = TransportAnnouncement::with(['carrier'])->get(); 
+        $chargeurAnnonces = FreightAnnouncement::with(['shipper','transportOffer'])->get();
+    
+        return view('admin.annonces.a_annonce', compact('chargeurAnnonces'));
+    }
+
+    public function displayAnnouncementCarrier()
+    {
+        $transporteurAnnonces = TransportAnnouncement::with(['carrier','freightOffers'])->get();
         
-        return view('admin.annonces.a_annonce', compact('chargeurAnnonces','transporteurAnnonces'));
+        return view('admin.annonces.annonceListe', compact('transporteurAnnonces'));
     }
 
     // Méthode pour filtrer les annonces par status
-    public function announcementFilterbyStatus(Request $request)
+    /*public function announcementFilterbyStatus(Request $request)
     {
         $status = $request->input('status');
 
@@ -33,27 +40,27 @@ class AdminController extends Controller
          $transporteurAnnonces = TransportAnnouncement::query()->where('status', $status)->get(); 
         
         return view('admin.annonces.filter', compact('chargeurAnnonces', 'transporteurAnnonces'));
-    }
+    }*/
 
-    public function updateFreightAnnouncementStatus(FreightAnnouncement $annonce)
+    /*public function updateFreightAnnouncementStatus(FreightAnnouncement $annonce)
     {
         // marquer l'annonce comme activée ou désactivée
         $annonce->status = ($annonce->status == 1) ? 0 : 1;
         $annonce->save();
 
         return redirect()->route('annonces.a_annonce')->with('success', 'Annonce de chargement mise à jour avec succès.');
-    }
+    }*/
 
 
 
-    public function updateTransportAnnouncementStatus(TransportAnnouncement $annonce)
+    /*public function updateTransportAnnouncementStatus(TransportAnnouncement $annonce)
     {
 
         $annonce->status = ($annonce->status == 1) ? 0 : 1;
         $annonce->save();
 
         return redirect()->route('annonces.a_annonce')->with('success', 'Annonce de transport mise à jour avec succès.');
-    }
+    }*/
 
     //USER GESTION.....................................................................................................
     public function bulkUpdateUserStatus(Request $request)
@@ -232,5 +239,7 @@ public function updateUserProfile(Request $request)
         return redirect()->route('admin.profile.affichage')->with('success', 'donnéés mise à jour avec succès.');
     } 
 }
+
+
 
 }
