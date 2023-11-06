@@ -87,7 +87,7 @@
                             {{-- Vérifiez si status_message est égal à 2 avant d'afficher le bouton Echanger --}}
                             @if($offer->status_message == 2 || $offer->status_message == 3)
                             <a href="{{ route('shipper-reply-chat', ['offer_id' => $offer->id]) }}" class="btn btn-tag btn-info">Echanger</a>
-                        @endif
+                            @endif
                         </td>
                     </tr>
                 @endforeach

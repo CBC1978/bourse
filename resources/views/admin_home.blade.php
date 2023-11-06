@@ -69,22 +69,12 @@
                 <p class="color-text-paragraph-2">Contrat ce mois</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
 
 
-
-<!----------------------------------------------------------------------------
-|FIN  SECTION VU RAPIDE
-|--------------------------------------------------------------------------------
-   -->
-
-
-    </div>
-
-    </div>
-  </div>
-
-
- {{-- <footer class="footer mt-20">
+ <footer class="footer mt-100">
     <div class="container">
       <div class="box-footer">
         <div class="row">
@@ -93,16 +83,16 @@
           </div>
           <div class="col-md-6 col-sm-12 text-center text-md-end mb-25">
             <ul class="menu-footer">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Policy</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </footer> --}}
+  </footer>
 </div>
-</div></div>
+
 @endsection

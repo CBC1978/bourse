@@ -156,9 +156,10 @@
 //Les routes annonces ADMIN
     Route::prefix('annonces')->group(function () {
         Route::get('/', [AdminController::class, 'displayAnnouncement'])->name('annonces.a_annonce');
+        Route::get('/annonce', [AdminController::class, 'displayAnnouncementCarrier'])->name('annonces.annonceListe');
         Route::put('/filtrer', [AdminController::class, 'announcementFilterbyStatus'])->name('annonces.filter');
-        Route::get('/update-freight/{annonce}', [AdminController::class,'updateFreightAnnouncementStatus'])->name('annonces.updateFreight');
-        Route::get('/update-transport/{annonce}', [AdminController::class,'updateTransportAnnouncementStatus'])->name('annonces.updateTransport');
+        //Route::get('/update-freight/{annonce}', [AdminController::class,'updateFreightAnnouncementStatus'])->name('annonces.updateFreight');
+        //Route::get('/update-transport/{annonce}', [AdminController::class,'updateTransportAnnouncementStatus'])->name('annonces.updateTransport');
 
     });
     Route::post('/bulk_update_status', [AdminController::class, 'bulkUpdateUserStatus'])->name('bulk_update_status');
@@ -171,6 +172,7 @@
     });
 
     Route::get('/a_user_gestion', [AdminController::class, 'displayUser'])->name('a_user_gestion');
+
 
     Route::prefix('admin')->group(function () {
 

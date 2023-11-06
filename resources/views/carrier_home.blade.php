@@ -6,7 +6,7 @@
       <div class="breadcrumbs mb-2">
         <ul>
           <li> <a class="icon-home" href="#">Tableau de bord</a></li>
-          <li><span>Dashboard</span></li>
+          <li><span>Accueil</span></li>
         </ul>
       </div>
     </div>
@@ -22,6 +22,7 @@
         <div class="row">
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
+              <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
               <div class="card-image"> <img src="{{asset('src/imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
@@ -34,6 +35,8 @@
           </div>
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
+              <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
+
               <div class="card-image"> <img src="{{asset('src/imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
@@ -46,6 +49,7 @@
           </div>
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
+              <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
               <div class="card-image"> <img src="{{asset('imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
@@ -58,6 +62,7 @@
           </div>
           <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-4 col-sm-6">
             <div class="card-style-1 hover-up">
+              <div class="card-image"> <img src="src/imgs/page/dashboard/computer.svg" alt="jobBox"></div>
               <div class="card-image"> <img src="{{asset('src/imgs/page/dashboard/computer.svg')}}" alt="jobBox"></div>
               <div class="card-info">
                 <div class="card-title">
@@ -100,13 +105,13 @@
                       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" id="card_annonce">
                           <div class="card-grid-2 hover-up">
                               <div class="card-grid-2-image-left"><span class="flash"></span>
-                                  <div class="image-box"><img src="imgs/brands/brand-1.png" alt="jobBox"></div>
+                                  <div class="image-box"><img src="" alt=""></div>
                                   <div class="right-info"><a  class="name-job{{ request()->routeIs('c_offerdetail') ? 'active' : '' }}"  href="{{ route('c_offerdetail') }}">{{ $announce->company_name }}</a>
                                       {{-- <span class="location-small">New York, US</span> --}}
                                   </div>
                               </div>
                               <div class="card-block-info">
-                                  <h6><a href="offer-details.html">{{ucfirst($announce->origin)}}-{{ucfirst($announce->destination)}}</a></h6>
+                                  <p><a href="offer-details.html">{{ucfirst($announce->origin)}}-{{ucfirst($announce->destination)}}</a></p>
                                   <div class="mt-5"><span class="card-briefcase">Date d'expiration:</span><span class="card-time">{{ date("d/m/Y",strtotime($announce->limit_date)) }}</span></div>
                                   <p class="font-sm color-text-paragraph mt-15">{{$announce->description}}</p>
                                   <div class="mt-30"><a class="btn btn-grey-small mr-5" href="" >{{$announce->weight}} Tonne(s)</a><a class="btn btn-grey-small mr-5" href="">{{ $announce->volume }} m3</a></div>

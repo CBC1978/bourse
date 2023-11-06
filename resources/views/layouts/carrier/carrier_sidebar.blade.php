@@ -30,7 +30,42 @@
        /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
        left: 0; z-index: 100;
      }
+    <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
+        <!-- Mobile menu (hidden by default) -->
+        <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar">
+            <div class="mobile-header-wrapper-inner">
+                <div class="mobile-header-content-area">
+                    <div class="perfect-scroll">
+                        <!-- Mobile search -->
+                        <div class="mobile-search mobile-header-border mb-30">
+                            <form action="">
+                                <input type="text" placeholder="Search…"><i class="fi-rr-search"></i>
+                            </form>
+                        </div>
+                        <div class="mobile-menu-wrap mobile-header-border">
+                          <nav>
+                            <ul class="main-menu">
+                              <li> <a class="dashboard2 {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}"><img src="{{ asset('src/imgs/page/dashboard/dashboard.svg') }}" alt="jobBox"><span class="name">Accueil</span></a>
+                              </li>
+                              <li> <a class="dashboard2 {{ request()->routeIs('shipper.announcements.index') ? 'active' : '' }}" href="{{ route('shipper.announcements.index') }}"><img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox"><span class="name">Annonces</span></a>
+                              </li>
+                              <li> <a class="dashboard2 {{ request()->routeIs('carrier.announcements.user') ? 'active' : '' }}" href="{{ route('carrier.announcements.user') }}"><img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox"><span class="name">Mes Annonces</span></a>
+                              </li>
+                              <li> <a class="dashboard2 {{ request()->routeIs('carrier.announcements.carrier_myrequest') ? 'active' : '' }}" href="{{ route('carrier.announcements.carrier_myrequest') }}"><img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox"><span class="name">Mes Demandes</span></a>
+                              </li>
+                              <li> <a class="dashboard2 {{ request()->routeIs('carrier.announcements.contract') ? 'active' : '' }}" href="{{ route('carrier.announcements.contract') }}"><img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox"><span class="name">Contrat</span></a>
+                              </li>
+                              <li> <a class="dashboard2" href=""><img src="{{ asset('src/imgs/page/dashboard/jobs.svg') }}" alt="jobBox"><span class="name">Statistiques</span></a>
+                              </li>
+                              <li> <a class="dashboard2 {{ request()->routeIs('carrier.parameter.displayCarrierSettings') ? 'active' : '' }}" href="{{ route('carrier.parameter.displayCarrierSettings') }}"><img src="{{ asset('src/imgs/page/dashboard/settings.svg') }}" alt="jobBox"><span class="name">Paramètres</span></a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
      @media (min-width: 569px) {
        .nav-main-menu {
          width: 216px;
@@ -87,7 +122,7 @@
                        <span class="name">Contrat</span>
                    </a>
                  </li>
-{{--                 <li>--}}
+                 <!--li>
 {{--                   <a class="dashboard2" href="#">--}}
 {{--                       <img src="{{ asset('src/imgs/page/dashboard/jobs.svg') }}" alt="jobBox">--}}
 {{--                       <span class="name">Statistiques</span>--}}
@@ -98,16 +133,59 @@
 {{--                       <img src="{{ asset('src/imgs/page/dashboard/settings.svg') }}" alt="jobBox">--}}
 {{--                       <span class="name">Paramètres</span>--}}
 {{--                   </a>--}}
-{{--                 </li>--}}
+{{--                 </li-->
                </ul>
              </nav>
            </div>
+
          </div>
        </div>
      </div>
    </div>
 
-   <div class="nav"><a class="btn btn-expanded" id="expandButton"></a>
+        <div class="nav"><a class="btn btn-expanded"></a>
+
+          <nav class="nav-main-menu">
+                <ul class="main-menu">
+                      <li>
+                        <div class="menu-box {{ request()->routeIs('home') ? 'active' : '' }}">
+                          <a href="{{ route('home') }}"><img src="{{ asset('src/imgs/page/dashboard/dashboard.svg') }}" alt="jobBox"><span class="name">Accueil</span></a>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="menu-box {{ request()->routeIs('shipper.announcements.index') ? 'active' : '' }}">
+                          <a href="{{ route('shipper.announcements.index') }}"><img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox"><span class="name">Annonces</span></a>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="menu-box {{ request()->routeIs('carrier.announcements.user') ? 'active' : '' }}">
+                          <a href="{{ route('carrier.announcements.user') }}"><img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox"><span class="name">Mes Annonces</span></a>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="menu-box {{ request()->routeIs('carrier.announcements.carrier_myrequest') ? 'active' : '' }}">
+                            <a href="{{ route('carrier.announcements.carrier_myrequest') }}">
+                                <img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox">
+                                <span class="name">Mes Demandes</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-box {{ request()->routeIs('carrier.announcements.contract') ? 'active' : '' }}">
+                            <a href="{{ route('carrier.announcements.contract') }}">
+                                <img src="{{ asset('src/imgs/page/dashboard/recruiters.svg') }}" alt="jobBox">
+                                <span class="name">Contrat</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+          </nav>
+        </div>
+
+       <div class="nav"><a class="btn btn-expanded" id="expandButton"></a>
      <nav class="nav-main-menu" id="mainMenu">
          <ul class="main-menu">
                <li>
@@ -157,7 +235,6 @@
    <script>
      const expandButton = document.getElementById('expandButton');
      const mainMenu = document.getElementById('mainMenu');
-
      expandButton.addEventListener('click', function() {
        if (mainMenu.style.width === '64px') {
          mainMenu.style.width = '275px'; // Reprendre la largeur d'origine
