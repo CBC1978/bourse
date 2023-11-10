@@ -430,12 +430,12 @@ class CarrierAnnouncementController extends Controller
 
         $type = DB::table('type_car')
             ->selectRaw('libelle')
-            ->where('id','=','3')
+            ->where('id','=',$car->id)
             ->get();
 
         $brand = DB::table('brand_car')
             ->selectRaw('libelle')
-            ->where('id','=','3')
+            ->where('id','=',$car->id)
             ->get();
 
         $data = array(
@@ -492,8 +492,8 @@ class CarrierAnnouncementController extends Controller
 
                     $contractDetails = new ContractDetails();
                     $contractDetails->contract_id = intval($request->input('contract'));
-                    $contractDetails->driver_id = $request->input('id_driver_contract')[$i];
-                    $contractDetails->cars_id = $request->input('id_car_contract')[$i];
+                    $contractDetails->driver_id = intval($request->input('id_driver_contract')[$i]);
+                    $contractDetails->cars_id = intval($cars[$i]);
                     $contractDetails->created_by = intval(session()->get('userId'));
 
                     $contractDetails->save();
