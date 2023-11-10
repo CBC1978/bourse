@@ -80,18 +80,18 @@
                   </a>
                  </li>
                  <li>
-                    <a class="dashboard2 {{ request()->routeIs('carrier.announcements.user') ? 'active' : '' }}" >
+                    <a href="{{ route('carrier.announcements.user') }}" class="dashboard2 {{ request()->routeIs('carrier.announcements.user') ? 'active' : '' }}" >
                       <img src="{{ asset('src/imgs/page/dashboard/transport.svg') }}" alt="jobBox">
                       <span class="name">Mes offres de transports</span>
                     </a>
-                    <ul class="sub-menu">
+                   {{-- <ul class="sub-menu">
                       <li>
                         <a href="{{ route('carrier.announcements.user') }}">Offres reçues</a>
                       </li>
                       <li>
                         <a href="{{ route('carrier.announcements.useroffer') }}">Offres non reçues</a>
                       </li>
-                    </ul>
+                    </ul> --}}
                </li>
                  <li>
                     <a class="dashboard2 {{ request()->routeIs('carrier.announcements.carrier_myrequest') ? 'active' : '' }}" href="{{ route('carrier.announcements.carrier_myrequest') }}">
@@ -106,7 +106,7 @@
                   </a>
                  </li>
                   <li>
-                    <a href="{{ route('carrier.profile.affichage') }}">
+                    <a href="{{ route('carrier.profile.affichage') }}" class="dashboard2 {{ request()->routeIs('carrier.profile.affichage') ? 'active' : '' }}">
                       <img src="{{ asset('src/imgs/page/dashboard/profiles.svg') }}" alt="jobBox">
                       <span>Profil</span> 
                     </a>
@@ -133,27 +133,27 @@
      <nav class="nav-main-menu" id="mainMenu">
          <ul class="main-menu">
                <li>
-                 <div class="menu-box {{ request()->routeIs('home') ? 'active' : '' }}">
-                   <a href="{{ route('home') }}">
+                 <div class="menu-box">
+                   <a href="{{ route('home') }}" class="dashboard2 {{ request()->routeIs('home') ? 'active' : '' }}">
                      <img src="{{ asset('src/imgs/page/dashboard/accueil.svg') }}" alt="jobBox">
                      <span class="name">Accueil</span>
                    </a>
                  </div>
                </li>
                <li>
-                 <div class="menu-box {{ request()->routeIs('shipper.announcements.index') ? 'active' : '' }}">
-                   <a href="{{ route('shipper.announcements.index') }}">
+                 <div class="menu-box">
+                   <a href="{{ route('shipper.announcements.index') }}" class="dashboard2 {{ request()->routeIs('shipper.announcements.index') ? 'active' : '' }}">
                      <img src="{{ asset('src/imgs/page/dashboard/conteneurFret.svg') }}" alt="jobBox">
                      <span class="name">Offres de fret</span>
                    </a>
                  </div>
                </li>
                <li>
-                  <a class="dashboard2 {{ request()->routeIs('carrier.announcements.user') ? 'active' : '' }}" >
+                  <a href="{{ route('carrier.announcements.user') }}" class="dashboard2 {{ request()->routeIs('carrier.announcements.user') ? 'active' : '' }}" >
                     <img src="{{ asset('src/imgs/page/dashboard/camion.svg') }}" alt="jobBox">
                     <span class="name">Mes offres de transports</span>
                   </a>
-                  <ul class="sub-menu">
+               {{--   <ul class="sub-menu">
                     <li>
                       <a href="{{ route('carrier.announcements.user') }}">Offres reçues</a>
                     </li>
@@ -161,19 +161,19 @@
                       <a href="{{ route('carrier.announcements.useroffer') }}">Offres non reçues</a>
                     </li>
                   </ul>
-               </li>
+               </li> --}}
 
                <li>
-                 <div class="menu-box {{ request()->routeIs('carrier.announcements.carrier_myrequest') ? 'active' : '' }}">
-                     <a href="{{ route('carrier.announcements.carrier_myrequest') }}">
+                 <div class="menu-box">
+                     <a href="{{ route('carrier.announcements.carrier_myrequest') }}" class="dashboard2 {{ request()->routeIs('carrier.announcements.carrier_myrequest') ? 'active' : '' }}">
                          <img src="{{ asset('src/imgs/page/dashboard/conteneur.svg') }}" alt="jobBox">
                          <span class="name">Mes offres de frets</span>
                      </a>
                  </div>
              </li>
              <li>
-                 <div class="menu-box {{ request()->routeIs('carrier.announcements.contract') ? 'active' : '' }}">
-                     <a href="{{ route('carrier.announcements.contract') }}">
+                 <div class="menu-box">
+                     <a href="{{ route('carrier.announcements.contract') }}" class="dashboard2 {{ request()->routeIs('carrier.announcements.contract') ? 'active' : '' }}">
                          <img src="{{ asset('src/imgs/page/dashboard/contrat.svg') }}" alt="jobBox">
                          <span class="name">Contrat</span>
                      </a>

@@ -112,7 +112,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                  <a href="{{ route('shipper.announcements.user') }}">
+                                  <a href="{{ route('shipper.announcements.user') }}" class="dashboard2 {{ request()->routeIs('shipper.announcements.user') ? 'active' : '' }}">
                                     <img src="{{ asset('src/imgs/page/dashboard/conteneur.svg') }}" alt="jobBox">
                                     <span class="name">Mes offres de frets</span>
                                   </a>
@@ -141,7 +141,7 @@
                                   </li>
 
                                   <li>
-                                    <a href="{{ route('carrier.profile.affichage') }}">
+                                    <a href="{{ route('carrier.profile.affichage') }}" class="dashboard2 {{ request()->routeIs('carrier.profile.affichage') ? 'active' : '' }}">
                                       <img src="{{ asset('src/imgs/page/dashboard/profiles.svg') }}" alt="jobBox">
                                       <span>Profil</span> 
                                     </a>
@@ -170,16 +170,17 @@
               <nav class="nav-main-menu" id="mainMenu">
                 <ul class="main-menu">
                   <li>
-                    <div class="menu-box {{ request()->routeIs('home') ? 'active' : '' }}"></div>
-                    <a class="" href="{{ route('home') }}">
-                        <img src="{{ asset('src/imgs/page/dashboard/accueil.svg') }}" alt="jobBox">
-                        <span class="name">Accueil</span>
-                    </a>
+                    <div class="menu-box">
+                      <a class="" href="{{ route('home') }}" class="dashboard2 {{ request()->routeIs('home') ? 'active' : '' }}">
+                          <img src="{{ asset('src/imgs/page/dashboard/accueil.svg') }}" alt="jobBox">
+                          <span class="name">Accueil</span>
+                      </a>
+                    </div>
                   </li>
 
                   <li>
-                    <div class="menu-box {{ request()->routeIs('carrier.announcements.index') ? 'active' : '' }}">
-                      <a class="" href="{{ route('carrier.announcements.index') }}">
+                    <div class="menu-box">
+                      <a class="" href="{{ route('carrier.announcements.index') }}" class="dashboard2 {{ request()->routeIs('carrier.announcements.index') ? 'active' : '' }}">
                         <img src="{{ asset('src/imgs/page/dashboard/transport.svg') }}" alt="jobBox">
                         <span class="name">Offres de transports</span>
                       </a>
@@ -187,8 +188,8 @@
                   </li>
 
                   <li>
-                    <div class="menu-box {{ request()->routeIs('shipper.announcements.user') ? 'active' : '' }}">
-                      <a href="{{ route('shipper.announcements.user') }}">
+                    <div class="menu-box">
+                      <a href="{{ route('shipper.announcements.user') }}" class="dashboard2 {{ request()->routeIs('shipper.announcements.user') ? 'active' : '' }}">
                         <img src="{{ asset('src/imgs/page/dashboard/conteneur.svg') }}" alt="jobBox">
                         <span class="name">Mes offres de frets</span>
                       </a>
@@ -205,8 +206,8 @@
                   </li>
 
                   <li>
-                    <div class="menu-box {{ request()->routeIs('shipper.announcements.shipper_myrequest') ? 'active' : '' }}">
-                      <a class="" href="{{ route('shipper.announcements.shipper_myrequest') }}">
+                    <div class="menu-box">
+                      <a class="" href="{{ route('shipper.announcements.shipper_myrequest') }}" class="dashbord2 {{ request()->routeIs('shipper.announcements.shipper_myrequest') ? 'active' : '' }}">
                         <img src="{{ asset('src/imgs/page/dashboard/camion.svg') }}" alt="jobBox">
                         <span class="name">Mes offres de transports</span>
                       </a>
@@ -214,10 +215,12 @@
                   </li>
 
                   <li> 
-                    <a class="dashboard2 {{ request()->routeIs('shipper.announcements.contract') ? 'active' : '' }}" href="{{ route('shipper.announcements.contract') }}">
-                      <img src="{{ asset('src/imgs/page/dashboard/contrat.svg') }}" alt="jobBox">
-                      <span class="name">Contrat</span>
-                    </a>
+                    <div class="menu-box">
+                      <a class="dashboard2 {{ request()->routeIs('shipper.announcements.contract') ? 'active' : '' }}" href="{{ route('shipper.announcements.contract') }}">
+                        <img src="{{ asset('src/imgs/page/dashboard/contrat.svg') }}" alt="jobBox">
+                        <span class="name">Contrat</span>
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </nav>

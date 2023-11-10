@@ -44,7 +44,7 @@ class CarrierAnnouncementController extends Controller
         return view('carrier.announcements.index', ['announcements' => $announcements]);
     }
 
-    public function userConnectedAnnouncement()
+ /*   public function userConnectedAnnouncement()
     {
         $user = User::find(session()->get('userId'));
         $announces = TransportAnnouncement::where('fk_carrier_id', intval($user->fk_carrier_id))
@@ -60,10 +60,10 @@ class CarrierAnnouncementController extends Controller
         });
 
         return view('carrier.announcements.user', compact('announcesWithOffers'));
-    }
+    }*/
 
 
-    public function userConnectedAnnounce()
+ /*   public function userConnectedAnnounce()
     {
 
 
@@ -80,6 +80,22 @@ class CarrierAnnouncementController extends Controller
 
     return view('carrier.announcements.useroffer', compact('announcesWithoutOffers'));
 
+    } */
+
+    public function userConnectedAnnouncement()
+    {
+        $user = User::find(session()->get('userId'));
+        $announces = TransportAnnouncement::where('fk_carrier_id', intval($user->fk_carrier_id))
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+        // Traiter les annonces et compter les offres
+        // Filtrer pour garder uniquement les annonces avec des offres
+        $announces->each(function ($announce) {
+            $announce->offreCount = $announce->freightOffers->count();
+        });
+
+        return view('carrier.announcements.user', compact('announces'));
     }
 
     //  Méthode pour  gérer l'acceptation ou le refus d'une offre
