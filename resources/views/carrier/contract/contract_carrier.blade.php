@@ -471,7 +471,6 @@
                 e.preventDefault();
                 // Récupérer les données du formulaire
                 var formData = new FormData(this);
-                console.log(formData)
                 // Envoyer les données au serveur en utilisant AJAX
                 fetch(this.action, {
                     method: 'POST',
@@ -482,7 +481,6 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
                     var newRow = `
                     <div class="col-md-12">
                         <div class="form-group input-group mb-3">
@@ -536,8 +534,8 @@
                             </span>
                             <input class="form-control" type="hidden" value="${item.id}" id="id_car_contract" name="id_car_contract[]" >
                             <input class="form-control mr-5" type="text" value="${item.registration}" id="car_registration" name="car_registration[]" required readonly>
-                            <input class="form-control mr-5" type="text" value="${item.type}" id="car_registration" name="car_registration[]" required readonly>
-                            <input class="form-control" type="text" value="${item.brand}" id="car_registration" name="car_registration[]" required readonly>
+                            <input class="form-control mr-5" type="text" value="${item.type}"  required readonly>
+                            <input class="form-control" type="text" value="${item.brand}" required readonly>
                         </div>
                     </div>
                     `

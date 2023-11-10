@@ -82,7 +82,7 @@
               </ul>
             </div>
             <div class="member-login">
-              <img alt="" src="{{ asset('imgs/page/dashboard/profile.png') }}">
+              <img alt="" src="{{ asset('src/imgs/page/dashboard/profile.png') }}">
               <div class="info-member">
                   <strong class="color-brand-1">
                       @if(Session::has('first_name'))
