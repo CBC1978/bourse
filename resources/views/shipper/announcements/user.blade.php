@@ -1,3 +1,4 @@
+
 @extends('layouts.shipper')
 
 @section('content')
@@ -52,13 +53,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                @foreach($announcesWithOffers as $announce)
+                                @foreach($announces as $announce)
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
                                         <div class="card-grid-2 hover-up" id="card_annonce">
                                             <div class="card-grid-2-image-left"><span class="flash"></span>
                                                 <div class="image-box">
                                                     @if($announce->offreCount > 0)
                                                         <a href="{{ route("shipper.announcements.myoffer", ['id'=>$announce->id]) }}" ><button type="button" class="btn btn-success ">{{$announce->offreCount}} Offres</button></a>
+                                                    @endif
+                                                    @if($announce->offreCount == 0)
+                                                        <a href="{{ route("shipper.announcements.myoffer", ['id'=>$announce->id]) }}" ><button type="button" class="btn btn-danger ">{{$announce->offreCount}} Offres</button></a>
                                                     @endif
                                                 </div>
                                                 <!-- Right info div removed as there was no content inside -->
