@@ -23,14 +23,14 @@
 </script>
 <button type="submit" onclick="returnToPreviousPage()">Retour</button>
 <div class="box-content">
-    <div class="box-heading">
+    <div class="box-heading mb-5">
         <div class="box-title">
-            <h3 class="mb-35">Offres de Transport</h3>
+            <h3 class="mb-35"></h3>
         </div>
         <div class="box-breadcrumb">
             <div class="breadcrumbs">
                 <ul>
-                    <li><a class="icon-home" href="index.html">Dashboard</a></li>
+                    <li><a class="icon-home" href="">Tableau de bord</a></li>
                     <li><span>Mes offres de Transport</span></li>
                 </ul>
             </div>
@@ -47,9 +47,13 @@
                                 <div class="container">
                                     <div class="panel-white mb-30">
                                         <div class="box-padding">
-                            
-                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                <input type="text" id="recherche" placeholder="Recherchez une annonce">
+                                            <div class="row mb-5">
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
+                                                    <h4>Offres de transport</h4>
+                                                </div>
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                    <input type="text" id="recherche" placeholder="Recherchez une annonce">
+                                                </div>
                                             </div>
                                           <div id="search-results"> </div>
                                             <div class="row" id="annoncesContainer">
@@ -74,6 +78,9 @@
                                                                             @if(Session::get('fk_shipper_id') != 0)
                                                                                 <div class="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm{{$announce->id}}">Postuler</div>
                                                                             @endif
+                                                                        @if(Session::get('fk_carrier_id') != 0)
+                                                                            <div class="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm{{$announce->id}}">Postuler</div>
+                                                                        @endif
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -90,7 +97,7 @@
                                                                         <p class="font-sm text-brand-2">POSTULER A L'Offre </p>
                                                                         @if(session('success'))
                                                                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                                            
+
                                                                                 <h5>  {{ session('success') }}</h5>
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </div>
@@ -149,36 +156,11 @@
         </div>
     </div>
 
-  {{--  <footer class="footer mt-20">
-        <div class="container">
-            <div class="box-footer">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 mb-25 text-center text-md-start">
-                        <p class="font-sm color-text-paragraph-2">© 2022 - <a class="color-brand-2" href="https://themeforest.net/item/jobbox-job-portal-html-bootstrap-5-template/39217891" target="_blank">JobBox </a>Dashboard <span> Made by  </span><a class="color-brand-2" href="http://alithemes.com" target="_blank"> AliThemes</a></p>
-                    </div>
-                    <div class="col-md-6 col-sm-12 text-center text-md-end mb-25">
-                        <ul class="menu-footer">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Policy</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <style>
-            .required {
-                color: red;
-                margin-left: 4px; /* Espacement entre le texte et l'étoile */
-            }
-
-        </style>
-    </footer> --}}
+  
 </div>
     <script>
         $(document).ready(function() {
-            
+
             $('.alert').delay(2000).fadeOut(400, function() {
                 $(this).alert('close');
             });
@@ -190,7 +172,7 @@
 
 
 <script>
-             
+
              $(document).ready(function () {
           setTimeout(function () {
               $("div.alert").remove();
@@ -216,7 +198,13 @@
 
     </script>
 
-    <!--script>
+    
+
+
+
+@endsection
+
+<!--script>
 
         $(document).ready(function () {
             var annoncesContainer = $('#annoncesContainer');
@@ -241,7 +229,29 @@
 
     </script-->
 
+    {{--  <footer class="footer mt-20">
+        <div class="container">
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 mb-25 text-center text-md-start">
+                        <p class="font-sm color-text-paragraph-2">© 2022 - <a class="color-brand-2" href="https://themeforest.net/item/jobbox-job-portal-html-bootstrap-5-template/39217891" target="_blank">JobBox </a>Dashboard <span> Made by  </span><a class="color-brand-2" href="http://alithemes.com" target="_blank"> AliThemes</a></p>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center text-md-end mb-25">
+                        <ul class="menu-footer">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .required {
+                color: red;
+                margin-left: 4px; /* Espacement entre le texte et l'étoile */
+            }
 
-
-@endsection
-
+        </style>
+    </footer> --}}

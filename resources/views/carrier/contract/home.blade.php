@@ -47,8 +47,8 @@
                 <div class="section-box">
                     <div class="container">
                         <div class="panel-white mb-30">
-                            <div class="box-padding">
-                                <table class="table table-responsive table-striped table-hover" id="contract_table">
+                            <div class="box-padding table-responsive">
+                                <table class="table table-striped table-hover" id="contract_table">
                                     <thead>
                                     <tr>
                                         <th scope="col"></th>

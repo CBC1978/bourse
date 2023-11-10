@@ -13,7 +13,6 @@ class ContractDetails extends Model
 
     protected $primaryKey = 'id';
 
-
     protected $fillable = [
         'driver_id',
         'contract_id',

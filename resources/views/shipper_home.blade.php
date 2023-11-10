@@ -80,14 +80,10 @@
                 <div class="row">
                   <div class="box-title">
                     <div class="row">
-
-                      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-25">
-
-
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-25">
-                        <h3>Offres récentes de transports </h3>
-                      </div>
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-25">
+                            <h3>Offres récentes de transports </h3>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
                             <input type="text" id="recherche" placeholder="Recherchez une annonce">
                         </div>
                     </div>
@@ -128,8 +124,7 @@
                                   </div>
                               </div>
 
-
-                    <div class="modal fade" id="ModalApplyJobForm{{$transport->id}}" tabindex="-1" aria-hidden="true">
+                        <div class="modal fade" id="ModalApplyJobForm{{$transport->id}}" tabindex="-1" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
                               <div class="modal-content apply-job-form">
                                   <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -161,53 +156,10 @@
                                               <button class="btn btn-default hover-up w-100" type="submit" name="login">ENVOYER</button>
                                           </div>
                                       </form>
-                                  <div class="card-2-bottom mt-30">
-                                      <div class="row">
-                                          {{-- <div class="col-lg-7 col-7"><span class="card-text-price">250.500</span><span class="text-muted">F</span></div> --}}
-                                          <div class="col-lg-5 col-5 text-end">
-                                              <div class="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm{{$transport->id}}">Postuler</div>
-                                          </div>
-                                      </div>
                                   </div>
                               </div>
                           </div>
                       </div>
-                    <div class="modal fade" id="ModalApplyJobForm{{$transport->id}}" tabindex="-1" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                          <div class="modal-content apply-job-form">
-                              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                              <div class="modal-body pl-30 pr-30 pt-50">
-                                  <div class="text-center">
-                                      <p class="font-sm text-brand-2">POSTULER A L'ANNONCE </p>
-                                      <h2 class="mt-10 mb-5 text-brand-1 text-capitalize">Faites une proposition</h2>
-                                      <p class="font-sm text-muted mb-30">Entrer les des information clair et valide pour multiplier vos chances</p>
-                                  </div>
-
-                                  <form class="login-register text-start mt-20 pb-30" action="{{ route('shipper.announcements.postuler') }}"  method="post" id="formPostuler">
-                                      @csrf
-                                      <div class="form-group">
-                                          <label class="form-label" for="price">Prix <span class="required">*</span><span>(En FCFA)</span></label>
-                                          <input class="form-control" type="number" name="price" id="price" placeholder="votre meilleur offre">
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="form-label" for="weight">Poids <span class="required">*</span><span>(En Tonne)</span></label>
-                                          <input class="form-control" type="number" name="weight" id="weight" placeholder="Le poids approximatif">
-                                      </div>
-
-                                      <div class="form-group">
-                                          <label class="form-label" for="description">Description</label>
-                                          <input class="form-control" id="description" type="text" required="" name="description" placeholder="description...">
-                                          <input class="form-control" id="idUser" name="idUser" value="{{session('userId') }}" type="hidden">
-                                          <input class="form-control" id="announce" name="announce" value="{{ $transport->id }}" type="hidden">
-                                      </div>
-                                      <div class="form-group">
-                                          <button class="btn btn-default hover-up w-100" type="submit" name="login">ENVOYER</button>
-                                      </div>
-                                  </form>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
              @endforeach
 
             </div>

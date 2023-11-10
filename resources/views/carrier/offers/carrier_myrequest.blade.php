@@ -42,8 +42,8 @@
 
 <div class="card mt-4" style="background: white; border-radius: 10px;">
     <div class="box-content">
-        <div class="row">
-            <table class="table table-responsive table-striped table-hover" id="requestTable">
+        <div class="row table-responsive">
+            <table class="table table-striped table-hover" id="requestTable">
                 <thead>
                     <tr>
                         <th scope="col">Numéro</th>
