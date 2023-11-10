@@ -141,6 +141,10 @@
                                               <label class="form-label" for="price">Prix<span class="text-danger">*</span><span>(En FCFA)</span></label>
                                               <input class="form-control" type="number" name="price" id="price" placeholder="votre meilleur offre">
                                           </div>
+                                          <div class="form-group">
+                                              <label class="form-label" for="weight">Poids <span class="required">*</span><span>(En Tonne)</span></label>
+                                              <input class="form-control" type="number" name="weight" id="weight" placeholder="Le poids approximatif">
+                                          </div>
 
                                           <div class="form-group">
                                               <label class="form-label" for="description">Description<span class="text-danger">*</span></label>

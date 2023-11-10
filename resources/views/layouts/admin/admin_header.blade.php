@@ -29,13 +29,13 @@
 
       <div class="header-right">
 
-          <div class="dropdown d-inline-block"><a class="btn btn-notify" id="dropdownNotify" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static"></a>
+          <!--div class="dropdown d-inline-block"><a class="btn btn-notify" id="dropdownNotify" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static"></a>
             <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownNotify">
               <li><a class="dropdown-item active" href="#">10 notifications</a></li>
               <li><a class="dropdown-item" href="#">12 messages</a></li>
               <li><a class="dropdown-item" href="#">20 replies</a></li>
             </ul>
-          </div>
+          </div-->
           <div class="member-login"><img alt="" src="{{ asset('src/imgs/page/dashboard/profile.png') }}" >
             <div class="info-member">
               <strong class="color-brand-1">
