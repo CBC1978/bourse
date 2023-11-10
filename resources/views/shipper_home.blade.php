@@ -80,14 +80,10 @@
                 <div class="row">
                   <div class="box-title">
                     <div class="row">
-
-                      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-25">
-
-
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-25">
-                        <h3>Offres récentes de transports </h3>
-                      </div>
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-25">
+                            <h3>Offres récentes de transports </h3>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
                             <input type="text" id="recherche" placeholder="Recherchez une annonce">
                         </div>
                     </div>

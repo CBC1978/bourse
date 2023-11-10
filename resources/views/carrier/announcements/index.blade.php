@@ -23,14 +23,14 @@
 </script>
 <button type="submit" onclick="returnToPreviousPage()">Retour</button>
 <div class="box-content">
-    <div class="box-heading">
+    <div class="box-heading mb-5">
         <div class="box-title">
-            <h3 class="mb-35">Offres de Transport</h3>
+            <h3 class="mb-35"></h3>
         </div>
         <div class="box-breadcrumb">
             <div class="breadcrumbs">
                 <ul>
-                    <li><a class="icon-home" href="index.html">Dashboard</a></li>
+                    <li><a class="icon-home" href="">Tableau de bord</a></li>
                     <li><span>Mes offres de Transport</span></li>
                 </ul>
             </div>
@@ -47,9 +47,13 @@
                                 <div class="container">
                                     <div class="panel-white mb-30">
                                         <div class="box-padding">
-                            
-                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                <input type="text" id="recherche" placeholder="Recherchez une annonce">
+                                            <div class="row mb-5">
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
+                                                    <h4>Offres de transport</h4>
+                                                </div>
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                    <input type="text" id="recherche" placeholder="Recherchez une annonce">
+                                                </div>
                                             </div>
                                           <div id="search-results"> </div>
                                             <div class="row" id="annoncesContainer">
@@ -72,7 +76,7 @@
                                                                     <div class="row">
                                                                         <div class="col-lg-5 col-5 text-end">
                                                                         @if(Session::get('fk_carrier_id') != 0)
-                                                                            <div class="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm{{$announce->id}}">Postuler</div>  
+                                                                            <div class="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm{{$announce->id}}">Postuler</div>
                                                                         @endif
                                                                         </div>
                                                                     </div>
@@ -90,7 +94,7 @@
                                                                         <p class="font-sm text-brand-2">POSTULER A L'Offre </p>
                                                                         @if(session('success'))
                                                                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                                            
+
                                                                                 <h5>  {{ session('success') }}</h5>
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </div>
@@ -178,7 +182,7 @@
 </div>
     <script>
         $(document).ready(function() {
-            
+
             $('.alert').delay(2000).fadeOut(400, function() {
                 $(this).alert('close');
             });
@@ -190,7 +194,7 @@
 
 
 <script>
-             
+
              $(document).ready(function () {
           setTimeout(function () {
               $("div.alert").remove();
