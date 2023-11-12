@@ -6,35 +6,45 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title></title>
   <style>
-    .menu-box {
-         padding: 2px;
-     }
+     .main {
+  display: flex;
+  width: 100%;
+  margin-top: 85px;
+}
 
-     .menu-box {
-         padding: 0px;
-     }
+.main .nav {
+  max-width: 280px;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  bottom: 0px;
+  display: inline-block;
+}
 
-     .menu-box a {
-         text-decoration: none;
-         color: #333;
-         display: block;
-     }
-
-     .menu-box a.active {
-         font-weight: bold;
-     }
-     .nav-main-menu{
-       position: fixed;
-       width: 275px;
-       top: 105px;
-       /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
-       left: 0; z-index: 100;
-     }
-
-  @media (min-width: 569px) {
-    .nav-main-menu {
-      width: 216px;
+.nav-main-menu{
+      position: fixed;
+      max-width: 270px;
+      width: 85%;
+      padding: 2px;
+      left: 4.5px; 
+      z-index: 100;
     }
+
+    button[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-expanded{
+      z-index: 1000px;
+    }
+
+    .main-menu li a {
+    padding: 14px;
   }
 
   </style>
@@ -62,31 +72,31 @@
               <ul class="main-menu">
                 <li>
                   <a class="dashboard2 {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
-                    <img src="{{ asset('src/imgs/page/dashboard/dashboard.svg') }}" alt="jobBox">
+                    <img src="{{ asset('src/imgs/page/dashboard/accueil.svg') }}" alt="jobBox">
                     <span class="name">Accueil</span>
                   </a>
                 </li>
                 <li>
                   <a class="dashboard2 {{ request()->routeIs('a_user_gestion') ? 'active' : '' }}" href="{{ route('a_user_gestion') }}">
-                    <img src="{{ asset('src/imgs/page/dashboard/candidates.svg') }}" alt="jobBox">
+                    <img src="{{ asset('src/imgs/page/dashboard/user.svg') }}" alt="jobBox">
                     <span class="name">Utilisateur </span>
                   </a>
                 </li>
                 <li>
                   <div class="menu-box">
-                    <a>
-                        <img src="{{ asset('src/imgs/page/dashboard/candidates.svg') }}" alt="jobBox">
+                    <a class="dashbord2 {{ request()->routeIs('admin.transporteur') ? 'active' : '' }}">
+                        <img src="{{ asset('src/imgs/page/dashboard/entreprise.svg') }}" alt="jobBox">
                         <span class="name">Entreprise</span>
                     </a>
                   </div>
                   <ul class="sub-menu">
                     <li>
-                        <a href="{{ route('admin.chargeur') }}">
+                        <a href="{{ route('admin.chargeur') }}" class="dashbord2 {{ request()->routeIs('admin.chargeur') ? 'active' : '' }}">
                             Chargeur
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.transporteur') }}">
+                        <a href="{{ route('admin.transporteur') }}" class="dashbord2 {{ request()->routeIs('admin.transporteur') ? 'active' : '' }}">
                             Transporteur
                         </a>
                     </li>
@@ -95,7 +105,7 @@
                 <li>
                   <div class="menu-offer {{ request()->routeIs('annonces.a_annonce') ? 'active' : '' }}">
                       <a>
-                          <img src="{{ asset('src/imgs/page/dashboard/candidates.svg') }}" alt="jobBox">
+                          <img src="{{ asset('src/imgs/page/dashboard/megaphone.svg') }}" alt="jobBox">
                           <span class="name">Offres</span>
                       </a>
                     </div>
@@ -112,6 +122,20 @@
                       </li>
                   </ul>
                 </li>
+                <li>
+                  <a href="{{ route('carrier.profile.affichage') }}">
+                    <img src="{{ asset('src/imgs/page/dashboard/profiles.svg') }}" alt="jobBox">
+                    <span>Profil</span> 
+                  </a>
+                 </li>
+               <div>
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  <button href="{{ route('logout') }}" type="submit">
+                    Déconnexion
+                  </button>
+                </form>
+               </div>
                   {{--<li><a class="dashboard2 {{ request()->routeIs('admin.parameter.displayAdminSettings') ? 'active' : '' }}" href="{{ route('admin.parameter.displayAdminSettings') }}"><img src="{{ asset('src/imgs/page/dashboard/tasks.svg') }}" alt="jobBox"><span class="name">Paramètres</span></a></li>--}}
               </ul>
             </nav>
@@ -125,36 +149,36 @@
     <nav class="nav-main-menu" id="mainMenu">
       <ul class="main-menu">
         <li>
-          <div class="menu-box {{ request()->routeIs('home') ? 'active' : '' }}">
-            <a href="{{ route('home') }}">
-              <img src="{{ asset('src/imgs/page/dashboard/dashboard.svg') }}" alt="jobBox">
+          <div class="menu-box">
+            <a href="{{ route('home') }}" class="dashboard2 {{ request()->routeIs('home') ? 'active' : '' }}">
+              <img src="{{ asset('src/imgs/page/dashboard/accueil.svg') }}" alt="jobBox">
               <span class="name">Accueil</span>
             </a>
           </div>
         </li>
         <li>
-          <div class="menu-box {{ request()->routeIs('a_user_gestion') ? 'active' : '' }}">
-            <a class="" href="{{ route('a_user_gestion') }}">
-              <img src="{{ asset('src/imgs/page/dashboard/candidates.svg') }}" alt="jobBox">
+          <div class="menu-box">
+            <a href="{{ route('a_user_gestion') }}" class="dashbord2 {{ request()->routeIs('a_user_gestion') ? 'active' : '' }}">
+              <img src="{{ asset('src/imgs/page/dashboard/user.svg') }}" alt="jobBox">
               <span class="name">Utilisateur</span>
             </a>
           </div>
         </li>
         <li>
           <div class="menu-box">
-            <a>
-                <img src="{{ asset('src/imgs/page/dashboard/candidates.svg') }}" alt="jobBox">
+            <a class="dashbord2 {{ request()->routeIs('admin.chargeur', 'admin.transporteur') ? 'active' : '' }}">
+                <img src="{{ asset('src/imgs/page/dashboard/entreprise.svg') }}" alt="jobBox">
                 <span class="name">Entreprise</span>
             </a>
           </div>
           <ul class="sub-menu">
             <li>
-                <a href="{{ route('admin.chargeur') }}">
+                <a href="{{ route('admin.chargeur') }}" class="dashbord2 {{ request()->routeIs('admin.chargeur') ? 'active' : '' }}">
                     Chargeur
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.transporteur') }}">
+                <a href="{{ route('admin.transporteur') }}" class="dashbord2 {{ request()->routeIs('admin.transporteur') ? 'active' : '' }}">
                     Transporteur
                 </a>
             </li>
@@ -162,20 +186,20 @@
         </li>
 
         <li>
-        <div class="menu-offer {{ request()->routeIs('annonces.a_annonce') ? 'active' : '' }}">
-            <a>
-                <img src="{{ asset('src/imgs/page/dashboard/candidates.svg') }}" alt="jobBox">
+        <div class="menu-offer">
+            <a class="dashbord2 {{ request()->routeIs('annonces.a_annonce', 'annonces.a_annonceTransporter') ? 'active' : '' }}">
+                <img src="{{ asset('src/imgs/page/dashboard/megaphone.svg') }}" alt="jobBox">
                 <span class="name">Offres</span>
             </a>
           </div>
           <ul class="sub-menu">
             <li>
-              <a href="{{ route('annonces.a_annonce') }}">
+              <a href="{{ route('annonces.a_annonce') }}" class="dashbord2 {{ request()->routeIs('annonces.a_annonce') ? 'active' : '' }}">
                     Chargeur(s)
                 </a>
             </li>
             <li>
-              <a href="{{ route('annonces.a_annonceTransporter') }}">
+              <a href="{{ route('annonces.a_annonceTransporter') }}" class="dashbord2 {{ request()->routeIs('annonces.a_annonceTransporter') ? 'active' : '' }}">
                     Transporteur(s)
                 </a>
             </li>

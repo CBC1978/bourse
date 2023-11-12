@@ -83,7 +83,7 @@ class ShipperAnnouncementController extends Controller
    }
 
        // Afficher les annonces de l'utilisateur
-    public function userConnectedAnnouncement()
+ /*   public function userConnectedAnnouncement()
     {
         $user = User::find(session()->get('userId'));
         $announces = FreightAnnouncement::where('fk_shipper_id', intval($user->fk_shipper_id))
@@ -123,8 +123,21 @@ class ShipperAnnouncementController extends Controller
    {
        $offer = Offer::findOrFail($offerId);
        return redirect()->back()->with('message', 'Offre traitée avec succès.');
-   }
+   } */
 
+   public function userConnectedAnnouncement()
+{
+    $user = User::find(session()->get('userId'));
+    $announces = FreightAnnouncement::where('fk_shipper_id', intval($user->fk_shipper_id))
+        ->orderBy('created_at', 'DESC')
+        ->get();
+
+    // Traiter les annonces et compter les offres
+    $announces->each(function ($announce) {
+        $announce->offreCount = $announce->transportOffer->count();
+    });
+    return view('shipper.announcements.user', compact('announces'));
+}
 
    // Afficher le détail d'une annonce
    public function show($id)

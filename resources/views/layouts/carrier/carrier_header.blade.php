@@ -72,13 +72,13 @@
                     PUBLIER UNE ANNONCE DE TRANSPORT
                 </a>
             @endif
-          <div class="dropdown d-inline-block"><a class="btn btn-notify" id="dropdownNotify" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static"></a>
+          <!--div class="dropdown d-inline-block"><a class="btn btn-notify" id="dropdownNotify" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static"></a>
             <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownNotify">
               <li><a class="dropdown-item active" href="#">10 notifications</a></li>
               <li><a class="dropdown-item" href="#">12 messages</a></li>
               <li><a class="dropdown-item" href="#">20 replies</a></li>
             </ul>
-          </div>
+          </div-->
           <div class="member-login"><img alt="" src="{{ asset('src/imgs/page/dashboard/profile.png') }}">
             <div class="info-member">
               <strong class="color-brand-1">
@@ -87,14 +87,14 @@
                   @endif
               </strong>
               <div class="dropdown">
-                  <a class="font-xs color-text-paragraph-2 icon-down" id="dropdownProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">Transporteur</a>
-                  <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownProfile">
-                      <li><a class="dropdown-item" href="{{ route('carrier.profile.affichage') }}">Profil</a></li>
-                      <form action="{{ route('logout') }}" method="POST">
-                          @csrf
-                          <button class="dropdown-item" type="submit">Déconnexion</button>
-                      </form>
-                  </ul>
+                <a class="font-xs color-text-paragraph-2 icon-down" id="dropdownProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">Transporteur</a>
+                <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownProfile">
+                  <li><a class="dropdown-item" href="{{ route('carrier.profile.affichage') }}">Profil</a></li>
+                    <form action="{{ route('logout') }}" method="POST">
+                      @csrf
+                      <button class="dropdown-item" type="submit">Déconnexion</button>
+                    </form>
+                </ul>
               </div>
           </div>
           </div>

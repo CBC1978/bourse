@@ -75,6 +75,9 @@
                                                                 <div class="card-2-bottom mt-30">
                                                                     <div class="row">
                                                                         <div class="col-lg-5 col-5 text-end">
+                                                                            @if(Session::get('fk_shipper_id') != 0)
+                                                                                <div class="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm{{$announce->id}}">Postuler</div>
+                                                                            @endif
                                                                         @if(Session::get('fk_carrier_id') != 0)
                                                                             <div class="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm{{$announce->id}}">Postuler</div>
                                                                         @endif
@@ -153,32 +156,7 @@
         </div>
     </div>
 
-  {{--  <footer class="footer mt-20">
-        <div class="container">
-            <div class="box-footer">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 mb-25 text-center text-md-start">
-                        <p class="font-sm color-text-paragraph-2">© 2022 - <a class="color-brand-2" href="https://themeforest.net/item/jobbox-job-portal-html-bootstrap-5-template/39217891" target="_blank">JobBox </a>Dashboard <span> Made by  </span><a class="color-brand-2" href="http://alithemes.com" target="_blank"> AliThemes</a></p>
-                    </div>
-                    <div class="col-md-6 col-sm-12 text-center text-md-end mb-25">
-                        <ul class="menu-footer">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Policy</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <style>
-            .required {
-                color: red;
-                margin-left: 4px; /* Espacement entre le texte et l'étoile */
-            }
-
-        </style>
-    </footer> --}}
+  
 </div>
     <script>
         $(document).ready(function() {
@@ -220,7 +198,13 @@
 
     </script>
 
-    <!--script>
+    
+
+
+
+@endsection
+
+<!--script>
 
         $(document).ready(function () {
             var annoncesContainer = $('#annoncesContainer');
@@ -245,7 +229,29 @@
 
     </script-->
 
+    {{--  <footer class="footer mt-20">
+        <div class="container">
+            <div class="box-footer">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 mb-25 text-center text-md-start">
+                        <p class="font-sm color-text-paragraph-2">© 2022 - <a class="color-brand-2" href="https://themeforest.net/item/jobbox-job-portal-html-bootstrap-5-template/39217891" target="_blank">JobBox </a>Dashboard <span> Made by  </span><a class="color-brand-2" href="http://alithemes.com" target="_blank"> AliThemes</a></p>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center text-md-end mb-25">
+                        <ul class="menu-footer">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .required {
+                color: red;
+                margin-left: 4px; /* Espacement entre le texte et l'étoile */
+            }
 
-
-@endsection
-
+        </style>
+    </footer> --}}
