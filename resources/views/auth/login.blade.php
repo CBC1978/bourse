@@ -10,12 +10,9 @@
 <meta name="description" content="Index page">
 <meta name="keywords" content="index, page">
 <meta name="author" content="">
-{{--<link rel="shortcut icon" type="image/x-icon" href="{{ asset('src/dashboard/imgs/template/favicon.svg') }}">--}}
 <link href="{{ asset('src/css/style.css?version=4.1') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -31,15 +28,11 @@
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
           <div class="preloader-inner position-relative">
-{{--            <div class="text-center"><img src="{{ asset('src/assets/imgs/template/loading.gif') }}" alt="jobBox"></div>--}}
           </div>
         </div>
       </div>
-
       <main class="main">
-
         <div class="box-content">
-
           <div class="row">
             <div class="col-lg-12">
               <div class="section-box">
@@ -51,6 +44,7 @@
                             <div class="form-login-cover">
                               <div class="text-center">
                             <div class="image-box"><img src="src/imgs/brands/logo-cbc.png" alt="jobBox"></div>
+                                <p class="font-sm text-muted mb-30">Connectez vous et faites des affaires.</p>
                                 <p class="font-sm text-muted mb-30">Connectez vous et faites des affaires.</p>
                                 <form class="login-register text-start mt-20" method="post" action="{{ route('loginUser') }}">
                                     @if(Session::has('success'))
