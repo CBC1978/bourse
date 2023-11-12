@@ -197,7 +197,7 @@ class ShipperAnnouncementController extends Controller
                carrier.company_name
            ")
            ->join('carrier', 'transport_offer.fk_carrier_id', '=', 'carrier.id')
-           ->where('transport_offer.fk_freight_announcement_id', $id) // Filtre par l'annonce spécifique
+           ->where('transport_offer.fk_freight_announcement_id', intval($id)) // Filtre par l'annonce spécifique
            ->get();
        return view('shipper.offers.s_myoffer', compact(['annonce', 'offers']));
    }

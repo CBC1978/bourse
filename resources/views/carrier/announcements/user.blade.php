@@ -62,10 +62,10 @@
                                             <div class="card-grid-2-image-left"><span class="flash"></span>
                                                 <div class="image-box">
                                                     @if($announce->offreCount > 0)
-                                                        <a href="{{ route("shipper.announcements.myoffer", ['id'=>$announce->id]) }}" ><button type="button" class="btn btn-success ">{{$announce->offreCount}} Offres</button></a>
+                                                        <a href="{{ route("carrier.announcements.myoffer", ['id'=>$announce->id]) }}" ><button type="button" class="btn btn-success ">{{$announce->offreCount}} Offres</button></a>
                                                     @endif
                                                     @if($announce->offreCount == 0)
-                                                        <a href="{{ route("shipper.announcements.myoffer", ['id'=>$announce->id]) }}" ><button type="button" class="btn btn-danger ">{{$announce->offreCount}} Offres</button></a>
+                                                        <a href="{{ route("carrier.announcements.myoffer", ['id'=>$announce->id]) }}" ><button type="button" class="btn btn-danger ">{{$announce->offreCount}} Offres</button></a>
                                                     @endif
                                                 </div>
                                                 <!-- Right info div removed as there was no content inside -->
@@ -99,7 +99,7 @@
 
 
     <script>
-                
+
                 $(document).ready(function () {
             setTimeout(function () {
                 $("div.alert").remove();
@@ -124,7 +124,7 @@
         });
 
     </script>
-    
+
 @endsection
 
 

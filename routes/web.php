@@ -128,10 +128,10 @@
         Route::get('create', [ShipperAnnouncementController::class, 'displayAnnouncementForm'])->name('create');
         Route::get('{id}', [ShipperAnnouncementController::class, 'show'])->name('show');
         Route::post('postuler', [ShipperAnnouncementController::class, 'positOffer'])->name('postuler');
-        Route::post('manage-offer/{id}', [ShipperAnnouncementController::class, 'manageOffer'])->name('offer.manage')->where('id', '[0-9]+');
+        Route::post('manage-offer/{id}', [ShipperAnnouncementController::class, 'manageOffer'])->name('offer.manage');
 
         Route::post('store', [ShipperAnnouncementController::class, 'handleSubmittedAnnouncement'])->name('store');
-        Route::get('myoffer/{id}', [ShipperAnnouncementController::class, 'offer'])->name('myoffer')->where('id', '[0-9]+');
+        Route::get('myoffer/{id}', [ShipperAnnouncementController::class, 'offer'])->name('myoffer');
         Route::post('store', [ShipperAnnouncementController::class, 'handleSubmittedAnnouncement'])->name('store');
 
         Route::get('contract/home', [ShipperAnnouncementController::class, 'contractHome'])->name('contract');
